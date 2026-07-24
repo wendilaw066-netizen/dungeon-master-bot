@@ -288,10 +288,10 @@ export function renderDashboard(player: PlayerInventory, userName: string) {
 
   const row2 = new ActionRowBuilder<ButtonBuilder>().addComponents(
     new ButtonBuilder().setCustomId('town_generals').setLabel('Jenderal').setEmoji(EMOJIS.fac_shu || '🎴').setStyle(ButtonStyle.Success),
-    new ButtonBuilder().setCustomId('town_army').setLabel('Barak Pasukan').setEmoji(EMOJIS.unit_infantry || '🥷').setStyle(ButtonStyle.Primary),
-    new ButtonBuilder().setCustomId('town_siege_menu').setLabel('Perang Penaklukan').setEmoji(EMOJIS.act_siege || '⚔️').setStyle(ButtonStyle.Danger),
-    new ButtonBuilder().setCustomId('town_deploy_dungeon').setLabel('Dungeon Ekspedisi').setEmoji(EMOJIS.map_capital || '🏰').setStyle(ButtonStyle.Danger),
-    new ButtonBuilder().setCustomId('town_deploy_boss').setLabel('World Boss Raid').setEmoji(EMOJIS.boss_lubu || '👹').setStyle(ButtonStyle.Danger)
+    new ButtonBuilder().setCustomId('town_army').setLabel('Pasukan').setEmoji(EMOJIS.unit_infantry || '🥷').setStyle(ButtonStyle.Primary),
+    new ButtonBuilder().setCustomId('town_siege_menu').setLabel('Penaklukan').setEmoji(EMOJIS.act_siege || '⚔️').setStyle(ButtonStyle.Danger),
+    new ButtonBuilder().setCustomId('town_deploy_dungeon').setLabel('Dungeon').setEmoji(EMOJIS.map_capital || '🏰').setStyle(ButtonStyle.Danger),
+    new ButtonBuilder().setCustomId('town_deploy_boss').setLabel('World Boss').setEmoji(EMOJIS.boss_lubu || '👹').setStyle(ButtonStyle.Danger)
   );
 
   const row3 = new ActionRowBuilder<ButtonBuilder>().addComponents(
