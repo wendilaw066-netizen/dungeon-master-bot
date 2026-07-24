@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZHU Bot — Elite Asset Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Login Overlay -->
+  <div id="loginOverlay" class="login-overlay">
+    <div class="login-box glass-panel">
+      <h2>Restricted Access</h2>
+      <p>Please authenticate to access the sovereign dashboard.</p>
+      <input type="password" id="passwordInput" placeholder="Enter Owner Password">
+      <button id="loginBtn" class="btn-primary">Authenticate</button>
+      <p id="loginError" class="error-msg"></p>
+    </div>
+  </div>
+
+  <div class="dashboard-layout" id="dashboardLayout" style="display: none;">
+    <!-- Sidebar -->
+    <aside class="sidebar glass-panel">
+      <div class="brand">
+        <img src="assets/banner.png" alt="ZHU Bot" class="brand-logo">
+        <h2>ZHU Bot</h2>
+        <span class="badge">OWNER PANEL</span>
+      </div>
+      <nav class="nav-menu">
+        <button class="nav-btn active" data-target="overview"><span class="icon">📊</span> Overview</button>
+        <button class="nav-btn" data-target="players"><span class="icon">👥</span> Player Audit</button>
+        <button class="nav-btn" data-target="events"><span class="icon">🏆</span> Event Manager</button>
+        <button class="nav-btn" data-target="worldboss"><span class="icon">👹</span> World Boss</button>
+        <button class="nav-btn" data-target="announcements"><span class="icon">📢</span> Announcements</button>
+      </nav>
+      <div class="sidebar-footer">
+        <p>System Status: <span class="status-indicator online"></span> Online</p>
+        <button id="logoutBtn" class="btn-secondary btn-small">Logout</button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <header class="top-header">
+        <h1>Dashboard Overview</h1>
+        <div class="header-actions">
+          <span class="live-clock" id="liveClock">00:00:00</span>
+        </div>
+      </header>
+
+      <!-- Overview Section -->
+      <section id="overview" class="content-section active">
+        <div class="stats-grid">
+          <div class="stat-card glass-panel">
+            <div class="label">Total Wealth (Coins)</div>
+            <div class="value" id="totalWlVal">0</div>
+          </div>
+          <div class="stat-card glass-panel">
+            <div class="label">Registered Sovereigns</div>
+            <div class="value" id="totalPlayersVal">0</div>
+          </div>
+          <div class="stat-card glass-panel">
+            <div class="label">Top Governor Wealth</div>
+            <div class="value text-gold" id="topWlVal">0</div>
+          </div>
+        </div>
+
+        <div class="faction-breakdown glass-panel">
+          <h3>Faction Distribution</h3>
+          <div class="faction-stats" id="factionStats">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Players Section -->
+      <section id="players" class="content-section">
+        <div class="glass-panel panel-header">
+          <h3>Sovereign Audit</h3>
+          <div class="controls">
+            <input type="text" id="searchInput" class="search-box glass-input" placeholder="Search by name, ID or Faction...">
+            <select id="factionFilter" class="glass-select">
+              <option value="all">All Factions</option>
+              <option value="Shu">Shu Han</option>
+              <option value="Wei">Cao Wei</option>
+              <option value="Wu">Eastern Wu</option>
+              <option value="Neutral">Neutral/Bandit</option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="table-container">
+          <table class="glass-table">
+            <thead>
+              <tr>
+                <th>Governor</th>
+                <th>Faction</th>
+                <th>Wealth</th>
+                <th>Town Tier</th>
+                <th>Army Units</th>
+                <th>Last Active</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="playerTableBody">
+              <!-- Populated by JS -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Events Section -->
+      <section id="events" class="content-section">
+        <div class="glass-panel" style="padding: 1.5rem;">
+          <h2>🏆 Event Manager</h2>
+          <p style="color:var(--text-muted); margin-bottom: 1rem;">Configure custom events for the kingdom.</p>
+          <div style="display:flex; gap:1rem; flex-direction:column; max-width:400px;">
+            <select id="eventType" class="glass-select">
+              <option value="double_xp">Double XP Weekend</option>
+              <option value="wealth_boom">Wealth Boom (2x Coins)</option>
+              <option value="peace">Peace Treaty (No PvP)</option>
+            </select>
+            <button class="btn-primary" onclick="triggerEvent()">Start Event</button>
+          </div>
+        </div>
+      </section>
+      
+      <!-- World Boss Section -->
+      <section id="worldboss" class="content-section">
+        <div class="glass-panel" style="padding: 1.5rem;">
+          <h2>👹 World Boss Control</h2>
+          <p style="color:var(--text-muted); margin-bottom: 1rem;">Spawn a world boss to attack the realm.</p>
+          <div style="display:flex; gap:1rem; flex-direction:column; max-width:400px;">
+            <input type="text" id="bossName" class="glass-input" placeholder="Boss Name (e.g. Lu Bu)">
+            <input type="number" id="bossHp" class="glass-input" placeholder="Boss HP (e.g. 50000)">
+            <button class="btn-primary" onclick="spawnBoss()">Spawn Boss</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Announcements Section -->
+      <section id="announcements" class="content-section">
+        <div class="glass-panel" style="padding: 1.5rem;">
+          <h2>📢 Global Announcements</h2>
+          <p style="color:var(--text-muted); margin-bottom: 1rem;">Broadcast a message to all Discord servers.</p>
+          <div style="display:flex; gap:1rem; flex-direction:column;">
+            <textarea id="announceText" class="glass-input" rows="4" placeholder="Enter your imperial decree..."></textarea>
+            <button class="btn-primary" onclick="sendAnnouncement()" style="max-width:200px;">Broadcast</button>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Edit Player Modal -->
+  <div id="editModal" class="login-overlay" style="display: none;">
+    <div class="login-box glass-panel" style="max-width: 600px; text-align: left;">
+      <h2 style="margin-bottom: 0;">Edit Player Assets</h2>
+      <p id="editPlayerName" style="color:var(--text-muted); margin-top:0; font-size:0.9rem; margin-bottom: 1rem;"></p>
+      
+      <input type="hidden" id="editUserId">
+      
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+        <div>
+          <label style="font-size: 0.8rem; color: var(--text-muted);">Coins</label>
+          <input type="number" id="editCoins" class="glass-input" style="width: 100%;">
+        </div>
+        <div>
+          <label style="font-size: 0.8rem; color: var(--text-muted);">Gems</label>
+          <input type="number" id="editGems" class="glass-input" style="width: 100%;">
+        </div>
+        
+        <div style="grid-column: span 2;">
+          <h4 style="margin-top: 1rem; color: var(--accent); border-bottom: 1px solid var(--panel-border); padding-bottom: 0.5rem;">Military</h4>
+        </div>
+        
+        <div>
+          <label style="font-size: 0.8rem; color: var(--text-muted);">Infantry</label>
+          <input type="number" id="editInfantry" class="glass-input" style="width: 100%;">
+        </div>
+        <div>
+          <label style="font-size: 0.8rem; color: var(--text-muted);">Archers</label>
+          <input type="number" id="editArchers" class="glass-input" style="width: 100%;">
+        </div>
+        <div>
+          <label style="font-size: 0.8rem; color: var(--text-muted);">Cavalry</label>
+          <input type="number" id="editCavalry" class="glass-input" style="width: 100%;">
+        </div>
+        <div>
+          <label style="font-size: 0.8rem; color: var(--text-muted);">Spearmen</label>
+          <input type="number" id="editSpearmen" class="glass-input" style="width: 100%;">
+        </div>
+        <div>
+          <label style="font-size: 0.8rem; color: var(--text-muted);">Catapults</label>
+          <input type="number" id="editCatapults" class="glass-input" style="width: 100%;">
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+        <button class="btn-primary" onclick="savePlayerEdit()" style="flex: 1;">Save Changes</button>
+        <button class="btn-secondary" onclick="closeEditModal()" style="flex: 1;">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

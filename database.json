@@ -1,0 +1,36 @@
+{
+  "users": {
+    "1419848896762613921-1104961692242292877": {
+      "userId": "1104961692242292877",
+      "guildId": "1419848896762613921",
+      "xp": 91,
+      "level": 5,
+      "lastMessageTimestamp": 1784872215758,
+      "warnings": [],
+      "balance": 0,
+      "lastDailyClaim": 0
+    }
+  },
+  "guilds": {
+    "1419848896762613921": {
+      "guildId": "1419848896762613921",
+      "levelRoles": {
+        "1": "1419848896892375049",
+        "5": "1419848896892375048",
+        "10": "1419848896892375047",
+        "20": "1419848896892375046",
+        "25": "1419848896892375045",
+        "30": "1419848896892375044",
+        "35": "1419848896892375043",
+        "40": "1419848896892375042",
+        "45": "1419848896892375041",
+        "50": "1419848896892375040"
+      },
+      "adIntervalMinutes": 1,
+      "adTemplate": "<:Catfish:879815783948099636> <a:Sparkle_Animated:947204046421364806>  PUIZ <a:Sparkle_Animated:947204046421364806>  <:Goldfish:880250410579943496>                                                                                                    =============                                                                                                                                :arrow: <:Wigglyworm:664930998097543179> Wiggly Worm 200/1                                                                                                  :arrow: <:Shinyflashything:664931239093862430> Shiny Flashy Thing 150/1                                                                                        :arrow:  <:Salmonegg:664931634541494274> Salmon Egg 200/1                                                                                                   :arrow: <:Fishingfly:664931732142948368> Fushing Fly 5/1                                                                                                         :arrow:  <:Shrimplure:664931852703760384> Shrimp Lure 1/2                                                                                                       :arrow: <:Megapellet:664931934778032130>  Mega Pellet 17/1                                                                                                              :arrow:  <:Uraniumglowinglure:664932003216359434>  Uranium Glowing Lure 18/1                                                                            ============== GO                                                                                                                            <:Goldfish:880250410579943496> <a:Sparkle_Animated:947204046421364806>PUIZ <a:Sparkle_Animated:947204046421364806><:Neonsquid:879812812984176670>",
+      "lastAdPostTimestamp": 1784357635524,
+      "modLogChannelId": "1528233721537237082",
+      "welcomeChannelId": "1419848897920110707"
+    }
+  }
+}

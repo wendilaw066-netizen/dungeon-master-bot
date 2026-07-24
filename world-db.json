@@ -1,0 +1,54 @@
+{
+  "regions": {
+    "r1": {
+      "id": "r1",
+      "name": "Capital City",
+      "controller": "f1",
+      "resourceBonus": "gems"
+    },
+    "r2": {
+      "id": "r2",
+      "name": "Northern Tundra",
+      "controller": "f2",
+      "resourceBonus": "mysticWood"
+    },
+    "r3": {
+      "id": "r3",
+      "name": "Southern Desert",
+      "controller": "f3",
+      "resourceBonus": "wls"
+    },
+    "r4": {
+      "id": "r4",
+      "name": "Eastern Forest",
+      "controller": "f2",
+      "resourceBonus": "mysticWood"
+    }
+  },
+  "factions": {
+    "f1": {
+      "id": "f1",
+      "name": "The Royal Vanguard",
+      "ideology": 80,
+      "resources": 1000,
+      "relations": {},
+      "state": "PEACE"
+    },
+    "f2": {
+      "id": "f2",
+      "name": "Crimson Horde",
+      "ideology": -50,
+      "resources": 800,
+      "relations": {},
+      "state": "PEACE"
+    },
+    "f3": {
+      "id": "f3",
+      "name": "Merchant Guild",
+      "ideology": 10,
+      "resources": 5000,
+      "relations": {},
+      "state": "PEACE"
+    }
+  }
+}

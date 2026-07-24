@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Three Kingdoms Map — Public Registry</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card-bg: rgba(30, 41, 59, 0.7);
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      
+      --shu: #10b981;
+      --wei: #3b82f6;
+      --wu: #ef4444;
+      --neutral: #64748b;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', system-ui, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      background-image: 
+        radial-gradient(at 0% 0%, rgba(16, 185, 129, 0.1) 0px, transparent 50%),
+        radial-gradient(at 100% 0%, rgba(239, 68, 68, 0.1) 0px, transparent 50%);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      letter-spacing: -1px;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(to right, #facc15, #f59e0b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+    }
+
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .stat-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 1rem;
+      padding: 1.5rem;
+      text-align: center;
+      transition: transform 0.2s;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .stat-value {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin: 0.5rem 0;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .player-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 1rem;
+      padding: 1.5rem;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.2s;
+    }
+
+    .player-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .faction-bar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+    }
+
+    .faction-Shu .faction-bar { background: var(--shu); }
+    .faction-Wei .faction-bar { background: var(--wei); }
+    .faction-Wu .faction-bar { background: var(--wu); }
+    .faction-Neutral .faction-bar { background: var(--neutral); }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .player-name {
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+
+    .badge {
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .badge-Shu { background: rgba(16, 185, 129, 0.2); color: var(--shu); }
+    .badge-Wei { background: rgba(59, 130, 246, 0.2); color: var(--wei); }
+    .badge-Wu { background: rgba(239, 68, 68, 0.2); color: var(--wu); }
+    .badge-Neutral { background: rgba(100, 116, 139, 0.2); color: var(--neutral); }
+
+    .card-body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .data-point {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .data-label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .data-value {
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    .alliance-section {
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .alliance-tag {
+      display: inline-block;
+      padding: 0.2rem 0.5rem;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 4px;
+      font-size: 0.8rem;
+      margin-right: 0.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .loader {
+      text-align: center;
+      padding: 3rem;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1>Three Kingdoms Map</h1>
+      <p class="subtitle">Public Player Registry & Faction Distribution</p>
+    </header>
+
+    <div class="stats-row" id="statsRow">
+      <!-- Stats injected here -->
+    </div>
+
+    <div class="grid" id="playerGrid">
+      <div class="loader">Loading world data...</div>
+    </div>
+  </div>
+
+  <script>
+    async function fetchMapData() {
+      try {
+        const res = await fetch('/api/public/map');
+        const json = await res.json();
+        
+        if (json.success) {
+          renderData(json.data);
+        } else {
+          document.getElementById('playerGrid').innerHTML = '<div class="loader">Failed to load data.</div>';
+        }
+      } catch (err) {
+        console.error(err);
+        document.getElementById('playerGrid').innerHTML = '<div class="loader">Network Error.</div>';
+      }
+    }
+
+    function renderData(data) {
+      // 1. Calculate Stats
+      let shu = 0, wei = 0, wu = 0;
+      let totalArmy = 0;
+
+      data.forEach(p => {
+        if (p.faction === 'Shu') shu++;
+        if (p.faction === 'Wei') wei++;
+        if (p.faction === 'Wu') wu++;
+        totalArmy += p.armyEstimate;
+      });
+
+      document.getElementById('statsRow').innerHTML = `
+        <div class="stat-card" style="border-bottom: 4px solid var(--shu)">
+          <div class="data-label">Shu Han (蜀)</div>
+          <div class="stat-value" style="color: var(--shu)">${shu}</div>
+          <div class="data-label">Cities</div>
+        </div>
+        <div class="stat-card" style="border-bottom: 4px solid var(--wei)">
+          <div class="data-label">Cao Wei (魏)</div>
+          <div class="stat-value" style="color: var(--wei)">${wei}</div>
+          <div class="data-label">Cities</div>
+        </div>
+        <div class="stat-card" style="border-bottom: 4px solid var(--wu)">
+          <div class="data-label">Eastern Wu (吳)</div>
+          <div class="stat-value" style="color: var(--wu)">${wu}</div>
+          <div class="data-label">Cities</div>
+        </div>
+        <div class="stat-card">
+          <div class="data-label">Total World Army</div>
+          <div class="stat-value">${totalArmy.toLocaleString()}</div>
+          <div class="data-label">Troops Deployed</div>
+        </div>
+      `;
+
+      // 2. Render Player Grid
+      const grid = document.getElementById('playerGrid');
+      grid.innerHTML = '';
+
+      // Sort by tier desc, then army desc
+      data.sort((a, b) => {
+        if (b.tier !== a.tier) return b.tier - a.tier;
+        return b.armyEstimate - a.armyEstimate;
+      });
+
+      const tierNames = {1:'Village', 2:'Town', 3:'City', 4:'Barony', 5:'Duchy', 6:'Kingdom'};
+
+      data.forEach(p => {
+        const alTgs = p.alliances && p.alliances.length > 0 
+          ? p.alliances.map(a => `<span class="alliance-tag">🤝 ${a.name}</span>`).join('')
+          : '<span class="data-label">No Alliances</span>';
+
+        grid.innerHTML += `
+          <div class="player-card faction-${p.faction}">
+            <div class="faction-bar"></div>
+            <div class="card-header">
+              <div class="player-name">${p.name}</div>
+              <div class="badge badge-${p.faction}">${p.faction}</div>
+            </div>
+            
+            <div class="card-body">
+              <div class="data-point">
+                <span class="data-label">City Tier</span>
+                <span class="data-value">${tierNames[p.tier] || 'Unknown'} (${p.tier})</span>
+              </div>
+              <div class="data-point">
+                <span class="data-label">Army Power</span>
+                <span class="data-value">⚔️ ${p.armyEstimate.toLocaleString()}</span>
+              </div>
+              <div class="data-point">
+                <span class="data-label">Morale</span>
+                <span class="data-value">${p.morale}%</span>
+              </div>
+              <div class="data-point">
+                <span class="data-label">Public Order</span>
+                <span class="data-value">${p.publicOrder}/100</span>
+              </div>
+            </div>
+
+            <div class="alliance-section">
+              <div class="data-label" style="margin-bottom: 0.5rem;">Alliances</div>
+              ${alTgs}
+            </div>
+          </div>
+        `;
+      });
+    }
+
+    // Init
+    fetchMapData();
+  </script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+import { loadMinigameDB } from './src/utils/minigame'; const { evaluateStrategies } = require('./src/utils/rpg/bot_full_ai'); const db = loadMinigameDB(); const player = (db.players || db)['Dungeon Master']; console.log(JSON.stringify(evaluateStrategies(db, player, 'Dungeon Master', true), null, 2));

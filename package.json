@@ -1,0 +1,33 @@
+{
+  "name": "discord-bot",
+  "version": "1.0.0",
+  "description": "Premium TypeScript Discord Bot",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "save": "tsx src/scripts/sync.ts save",
+    "sync": "tsx src/scripts/sync.ts sync",
+    "register-commands": "tsx src/deploy-commands.ts",
+    "tunnel": "cloudflared tunnel --url http://localhost:3420"
+  },
+  "dependencies": {
+    "@google/genai": "^2.12.0",
+    "canvas": "^3.2.3",
+    "cors": "^2.8.6",
+    "discord.js": "^14.18.0",
+    "dotenv": "^16.4.7",
+    "express": "^5.2.1",
+    "groq-sdk": "^1.3.0",
+    "localtunnel": "^2.0.2"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/node": "^22.10.2",
+    "cloudflared": "^0.7.1",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}
