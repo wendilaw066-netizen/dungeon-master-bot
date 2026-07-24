@@ -279,25 +279,25 @@ export function evaluateStrategies(db: any, player: any, botName: string, isHuma
   const { getGachaCost, GENERALS_DB } = require('./generals');
   let gachaMult = personality === 'GAMBLER' ? 5.0 : 1.0;
   const gCost = getGachaCost(town.generals?.length || 0);
-  if (town.tier >= 4 && coins >= gCost && (town.generals?.length || 0) < 3) {
-    decisions.push({ priority: 135 * gachaMult, action: 'gacha_general', townAction: 'gacha_general', description: `Ã°Å¸Å½Â´ **${botName}** Gacha Jenderal!` });
+  if (town.tier >= 4 && coins >= gCost && (town.generals?.length || 0) < 2) {
+    decisions.push({ priority: 135 * gachaMult, action: 'gacha_general', townAction: 'gacha_general', description: `🎴 **${botName}** Gacha Jenderal!` });
   }
 
-  // Court Officer Recruitment
+  // Court Officer Recruitment (Max 2)
   const { THREE_KINGDOMS_ROSTER } = require('./characters');
   const ownedCharIds = (player.characters || []).map((c: any) => c.id);
   const hireableChars = THREE_KINGDOMS_ROSTER.filter((c: any) => (c.affinity === player.faction || c.affinity === 'Neutral') && !ownedCharIds.includes(c.id));
-  if (hireableChars.length > 0 && coins >= 120) {
+  if (hireableChars.length > 0 && coins >= 120 && ownedCharIds.length < 2) {
     const targetChar = hireableChars[0];
     if (coins >= targetChar.price) {
-      decisions.push({ priority: 175, action: `recruit_char_${targetChar.id}`, townAction: `recruit_char_${targetChar.id}`, description: `Ã°Å¸â€œÅ“ **${botName}** merekrut **${targetChar.name}** ke Kabinet Istana!` });
+      decisions.push({ priority: 175, action: `recruit_char_${targetChar.id}`, townAction: `recruit_char_${targetChar.id}`, description: `📜 **${botName}** merekrut **${targetChar.name}** ke Kabinet Istana!` });
     }
   }
 
-  // AUTO EQUIP GENERAL (Role-Balanced Party: Tank / DPS / Healer)
+  // AUTO EQUIP GENERAL (Max 2 Generals in Party)
   const activeParty = town.activeParty || [];
   const unequipped = (town.generals || []).filter((gId: string) => !activeParty.includes(gId));
-  if (unequipped.length > 0 && activeParty.length < 3) {
+  if (unequipped.length > 0 && activeParty.length < 2) {
     const genId = unequipped[0];
     const genObj = GENERALS_DB.find((x: any) => x.id === genId);
     const genName = genObj ? genObj.name : genId;

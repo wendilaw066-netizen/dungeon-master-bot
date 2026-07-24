@@ -167,8 +167,8 @@ export function handleGeneralAction(player: PlayerInventory, action: string, db:
       saveMinigameDB(db);
       return `👑 You have removed **${g?.name}** from your party!`;
     } else {
-      if (player.town.activeParty.length >= 3) {
-        return `❌ Your party is full! Remove a general first (Max 3).`;
+      if (player.town.activeParty.length >= 2) {
+        return `❌ Pesta Jenderal Anda sudah penuh! Lepas salah satu Jenderal terlebih dahulu (Maksimal 2 Jenderal).`;
       }
       player.town.activeParty.push(gId);
       // For legacy purposes

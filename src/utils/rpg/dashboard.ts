@@ -29,7 +29,12 @@ function cleanActionName(str: string): string {
   if (text === 'forge_armor') return `🛡️ Menempa Zirah Pelindung`;
   if (text === 'upgrade_tier') return `👑 Naik ke Tier Kerajaan Baru!`;
   if (text === 'buy_land') return `🗺️ Membeli Lahan Ekspansi Kota`;
-  if (text === 'rebel_fight') return `🚨 Pasukan dikirim menumpas Pemberontak`;
+  if (text === 'recruit_covert_spy') return `🕵️ Merekrut Mata-Mata Rahasia ke Istana`;
+  if (text === 'train_infantry') return `🗡️ Melatih Prajurit Infantri Baru`;
+  if (text === 'train_archer') return `🏹 Melatih Prajurit Archer Baru`;
+  if (text === 'train_spearman') return `🔱 Melatih Prajurit Spearman Baru`;
+  if (text === 'train_cavalry') return `🐎 Melatih Pasukan Kavaleri Baru`;
+  if (text === 'gacha_general') return `🎴 Rekrutmen Jenderal Istana`;
   if (text.startsWith('equip_general_')) return `🎖️ Menugaskan Jenderal Utama`;
 
   return text;
