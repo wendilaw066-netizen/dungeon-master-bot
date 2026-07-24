@@ -188,39 +188,32 @@ export function evaluateStrategies(db: any, player: any, botName: string, isHuma
 
   // L4: MILITARY & FORGING LAYER (Smart Drafting)
   if (town.tier >= 2 || (town.buildings.smithies || 0) > 0) {
-    if (iron >= 10 && wood >= 5) decisions.push({ priority: 155 * warMult, action: 'forge_sword', townAction: 'forge_sword', description: `Ã¢Å¡â€™Ã¯Â¸Â **${botName}** menempa Sword!` });
-    if (wood >= 10 && copper >= 5) decisions.push({ priority: 154 * warMult, action: 'forge_bow', townAction: 'forge_bow', description: `Ã°Å¸ÂÂ¹ **${botName}** menempa Bow!` });
-    if (wood >= 10 && iron >= 10) decisions.push({ priority: 153 * warMult, action: 'forge_spear', townAction: 'forge_spear', description: `Ã°Å¸â€”Â¡Ã¯Â¸Â **${botName}** menempa Spear!` });
+    if (iron >= 10 && wood >= 5) decisions.push({ priority: 155 * warMult, action: 'forge_sword', townAction: 'forge_sword', description: `Ã¢Å¡â€™Ã¯Â¸Â  **${botName}** menempa Sword!` });
+    if (wood >= 10 && copper >= 5) decisions.push({ priority: 154 * warMult, action: 'forge_bow', townAction: 'forge_bow', description: `Ã°Å¸Â Â¹ **${botName}** menempa Bow!` });
+    if (wood >= 10 && iron >= 10) decisions.push({ priority: 153 * warMult, action: 'forge_spear', townAction: 'forge_spear', description: `Ã°Å¸â€”Â¡Ã¯Â¸Â  **${botName}** menempa Spear!` });
     if (iron >= 15 && wood >= 5) decisions.push({ priority: 152 * warMult, action: 'forge_armor', townAction: 'forge_armor', description: `${EMOJIS.btn_shield} **${botName}** menempa Armor!` });
   }
 
   if ((town.buildings.workshops || 0) > 0 && coins >= 10 && iron >= 20 && wood >= 10) {
-     decisions.push({ priority: 165 * warMult, action: 'craft_catapult', townAction: 'craft_catapult', description: `Ã¢Ëœâ€žÃ¯Â¸Â **${botName}** merakit Mesin Catapult Pengepungan!` });
+     decisions.push({ priority: 165 * warMult, action: 'craft_catapult', townAction: 'craft_catapult', description: `Ã¢Ëœâ€žÃ¯Â¸Â  **${botName}** merakit Mesin Catapult Pengepungan!` });
   }
 
   // Multi-Group Expedition & Espionage Evaluation
   const totalTroops = (town.army?.infantry || 0) + (town.army?.archers || 0) + (town.army?.cavalry || 0) + (town.army?.spearmen || 0) + (town.army?.catapults || 0);
-  const spyCount = town.covertOps?.spies || 0;
   const { activeWorldBoss } = require('./world-boss');
   
-  if (totalTroops > 20 && spyCount === 0 && coins >= 10) {
-    decisions.push({ priority: 220, action: 'recruit_covert_spy', townAction: 'recruit_covert_spy', description: `Ã°Å¸â€¢ÂµÃ¯Â¸Â **${botName}** menyewa Mata-mata untuk pengintaian taktis!` });
-  }
-
   if (totalTroops > 30) {
     const estimatedPower = (town.army?.infantry || 0) * 10 + (town.army?.archers || 0) * 12 + (town.army?.cavalry || 0) * 18 + (town.army?.spearmen || 0) * 14 + (town.army?.catapults || 0) * 35;
 
     if (activeWorldBoss && activeWorldBoss.isActive && activeWorldBoss.hp > 0) {
       const winProbability = Math.min(1.0, estimatedPower / 500);
       if (winProbability >= 0.5 && Math.random() < (0.4 * warMult)) {
-        decisions.push({ priority: 300 * warMult, action: 'deploy_world_boss', townAction: 'deploy_boss', description: `Ã¢Å¡â€Ã¯Â¸Â **${botName}** (Peluang Menang: ${Math.floor(winProbability * 100)}%) memimpin ekspedisi ke **World Boss**!` });
-      } else if (winProbability < 0.5 && spyCount > 0) {
-        decisions.push({ priority: 210, action: 'train_infantry', townAction: 'train_infantry', description: `Ã°Å¸â€ºÂ¡Ã¯Â¸Â **${botName}** (Hasil Spionase: Win-rate <50%) menunda serangan & melatih pertahanan!` });
+        decisions.push({ priority: 300 * warMult, action: 'deploy_world_boss', townAction: 'deploy_boss', description: `Ã¢Å¡â€ Ã¯Â¸Â  **${botName}** (Peluang Menang: ${Math.floor(winProbability * 100)}%) memimpin ekspedisi ke **World Boss**!` });
       }
     } else {
       const winProbability = Math.min(1.0, estimatedPower / 300);
       if (winProbability >= 0.5 && Math.random() < (0.3 * warMult)) {
-        decisions.push({ priority: 180 * warMult, action: 'deploy_dungeon', townAction: 'deploy_dungeon', description: `Ã°Å¸ÂÂ° **${botName}** (Taktik Terencana) mengirim Ekspedisi ke **Dungeon**!` });
+        decisions.push({ priority: 180 * warMult, action: 'deploy_dungeon', townAction: 'deploy_dungeon', description: `Ã°Å¸Â Â° **${botName}** (Taktik Terencana) mengirim Ekspedisi ke **Dungeon**!` });
       }
     }
   }
