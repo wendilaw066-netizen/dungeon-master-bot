@@ -809,35 +809,39 @@ export async function handleTownAction(db: any, player: PlayerInventory, action:
     return handleTownAction(db, player, 'destroy_menu', userName, guild);
   }
 
-  // ── ARMY MENU ──
+  // 🥷 ARMY MENU 🥷
   if (action === 'army') {
-    const army = town.army || { infantry: 0, archers: 0, cavalry: 0, spearmen: 0 };
+    const army = town.army || { infantry: 0, archers: 0, cavalry: 0, spearmen: 0, catapults: 0 };
     const w = town.weapons || { sword: 0, bow: 0, spear: 0, armor: 0 };
+
+    const totalPower = (army.infantry * 10) + (army.archers * 15) + (army.cavalry * 30) + ((army.spearmen || 0) * 12) + ((army.catapults || 0) * 50);
 
     const embed = new EmbedBuilder()
       .setColor(0xE74C3C)
-      .setTitle(`⚔️ Barak Militer & Rekrutmen Pasukan — ${userName}`)
+      .setTitle(`${EMOJIS.bld_barracks || '🏰'} Barak Militer & Komando Pasukan - ${userName}`)
       .setDescription(
-        `Kelola dan rekrut pasukan tempur untuk mempertahankan kota atau menyerang lawan:\n\n` +
-        `🥷 **Infantri:** \`${army.infantry}\` Prajurit (Stok Pedang: \`${w.sword}\`)\n` +
-        `🏹 **Archer:** \`${army.archers}\` Prajurit (Stok Busur: \`${w.bow}\`)\n` +
-        `🔱 **Spearman:** \`${army.spearmen || 0}\` Prajurit (Stok Tombak: \`${w.spear}\`)\n` +
-        `🐎 **Kavaleri:** \`${army.cavalry}\` Prajurit (Butuh Kuda & Zirah)`
+        `Kelola kesiapan tempur prajurit Anda untuk mempertahankan benteng atau melancarkan ekspedisi penaklukan:\n\n` +
+        `⚡ **TOTAL ATTACK POWER:** \`${totalPower.toLocaleString()} ATK\`\n\n` +
+        `${EMOJIS.unit_infantry || '🗡️'} **Infantri:** \`${army.infantry}\` Prajurit (Stok Pedang: \`${w.sword}\`)\n` +
+        `${EMOJIS.unit_archer || '🏹'} **Archer:** \`${army.archers}\` Prajurit (Stok Busur: \`${w.bow}\`)\n` +
+        `${EMOJIS.unit_spear || '🔱'} **Spearman:** \`${army.spearmen || 0}\` Prajurit (Stok Tombak: \`${w.spear}\`)\n` +
+        `${EMOJIS.unit_cavalry || '🐎'} **Kavaleri:** \`${army.cavalry}\` Prajurit (Butuh Kuda & Zirah)\n` +
+        `${EMOJIS.unit_catapult || '💣'} **Ketapel Perang:** \`${army.catapults || 0}\` Unit (Penghancur Benteng)`
       )
       .addFields(getCashflowField(player));
 
     const row1 = new ActionRowBuilder<ButtonBuilder>().addComponents(
-      new ButtonBuilder().setCustomId('town_train_infantry').setLabel('Latih Infantri').setEmoji('🥷').setStyle(ButtonStyle.Success).setDisabled(w.sword <= 0),
-      new ButtonBuilder().setCustomId('town_train_archer').setLabel('Latih Archer').setEmoji('🏹').setStyle(ButtonStyle.Success).setDisabled(w.bow <= 0),
-      new ButtonBuilder().setCustomId('town_train_spearman').setLabel('Latih Spearman').setEmoji('🔱').setStyle(ButtonStyle.Success).setDisabled(w.spear <= 0),
-      new ButtonBuilder().setCustomId('town_train_cavalry').setLabel('Latih Kavaleri').setEmoji('🐎').setStyle(ButtonStyle.Success).setDisabled((town.horses || 0) <= 0)
+      new ButtonBuilder().setCustomId('town_train_infantry').setLabel('Latih Infantri').setEmoji(EMOJIS.unit_infantry || '🗡️').setStyle(ButtonStyle.Success).setDisabled(w.sword <= 0),
+      new ButtonBuilder().setCustomId('town_train_archer').setLabel('Latih Archer').setEmoji(EMOJIS.unit_archer || '🏹').setStyle(ButtonStyle.Success).setDisabled(w.bow <= 0),
+      new ButtonBuilder().setCustomId('town_train_spearman').setLabel('Latih Spearman').setEmoji(EMOJIS.unit_spear || '🔱').setStyle(ButtonStyle.Success).setDisabled(w.spear <= 0),
+      new ButtonBuilder().setCustomId('town_train_cavalry').setLabel('Latih Kavaleri').setEmoji(EMOJIS.unit_cavalry || '🐎').setStyle(ButtonStyle.Success).setDisabled((town.horses || 0) <= 0)
     );
 
     const row2 = new ActionRowBuilder<ButtonBuilder>().addComponents(
-      new ButtonBuilder().setCustomId('town_forge_sword').setLabel('Tempa Pedang (5 Besi)').setEmoji('🗡️').setStyle(ButtonStyle.Primary),
-      new ButtonBuilder().setCustomId('town_forge_bow').setLabel('Tempa Busur (5 Kayu)').setEmoji('🏹').setStyle(ButtonStyle.Primary),
-      new ButtonBuilder().setCustomId('town_forge_spear').setLabel('Tempa Tombak (5 Kayu)').setEmoji('🔱').setStyle(ButtonStyle.Primary),
-      new ButtonBuilder().setCustomId('town_main').setLabel('Kembali ke Utama').setEmoji('🔙').setStyle(ButtonStyle.Secondary)
+      new ButtonBuilder().setCustomId('town_forge_sword').setLabel('Tempa Pedang (5 Besi)').setEmoji(EMOJIS.bld_smithy || '🛠️').setStyle(ButtonStyle.Primary),
+      new ButtonBuilder().setCustomId('town_forge_bow').setLabel('Tempa Busur (5 Kayu)').setEmoji(EMOJIS.res_wood || '🪵').setStyle(ButtonStyle.Primary),
+      new ButtonBuilder().setCustomId('town_forge_spear').setLabel('Tempa Tombak (5 Kayu)').setEmoji(EMOJIS.res_wood || '🪵').setStyle(ButtonStyle.Primary),
+      new ButtonBuilder().setCustomId('town_main').setLabel('Kembali').setEmoji(EMOJIS.btn_back || '🔙').setStyle(ButtonStyle.Secondary)
     );
 
     return { embeds: [embed], components: [row1, row2] };

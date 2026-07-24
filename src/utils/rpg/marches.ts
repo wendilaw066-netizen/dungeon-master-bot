@@ -14,17 +14,15 @@ export function renderMarchMenu(player: PlayerInventory, userName: string, db: M
   if (!town) return 'Town not found.';
   
   const embed = new EmbedBuilder()
-    .setColor(0xE67E22)
-    .setTitle(`${EMOJIS.unit_infantry} War Room / Army March — ${userName}`)
+    .setColor(0xE74C3C)
+    .setTitle(`${EMOJIS.act_siege || '⚔️'} Markas Komando & Perang Penaklukan - ${userName}`)
     .setDescription(
-      `Send your army across the world map. Marching takes time based on distance (5 minutes per coordinate).\n\n` +
-      `**Current Location:** (${town.location?.x || 0}, ${town.location?.y || 0})\n` +
-      `**Available Troops:**\n` +
-      `${EMOJIS.btn_shield} Infantry: ${town.army?.infantry || 0}\n` +
-      `🏹 Archers: ${town.army?.archers || 0}\n` +
-      `🐎 Cavalry: ${town.army?.cavalry || 0}\n` +
-      `🗡️ Spearmen: ${town.army?.spearmen || 0}\n` +
-      `${EMOJIS.res_stone} Catapults: ${town.army?.catapults || 0}\n`
+      `Pilih target ekspedisi militer untuk merebut sumber daya, menumpas benteng lawan, atau menaklukkan wilayah:\n\n` +
+      `📌 **Koordinat Kota:** \`(${town.location?.x || 0}, ${town.location?.y || 0})\`\n\n` +
+      `🛡️ **Kesiapan Pasukan Perang:**\n` +
+      `${EMOJIS.unit_infantry || '🗡️'} Infantri: **${town.army?.infantry || 0}** | ${EMOJIS.unit_archer || '🏹'} Archer: **${town.army?.archers || 0}**\n` +
+      `${EMOJIS.unit_cavalry || '🐎'} Kavaleri: **${town.army?.cavalry || 0}** | ${EMOJIS.unit_spear || '🔱'} Spearman: **${town.army?.spearmen || 0}**\n` +
+      `${EMOJIS.unit_catapult || '💣'} Ketapel Perang: **${town.army?.catapults || 0}**\n`
     );
     
   if (town.marches && town.marches.length > 0) {
@@ -32,24 +30,20 @@ export function renderMarchMenu(player: PlayerInventory, userName: string, db: M
     for (const m of town.marches) {
       if (m.status === 'marching') {
         const remainingStr = Math.max(0, Math.floor((m.arrivalMs - Date.now()) / 60000));
-        marchStr += `• 🏃 Marching to (${m.targetX}, ${m.targetY}) - Arrives in **${remainingStr} mins**\n`;
+        marchStr += `• ${EMOJIS.act_march || '🚩'} Menggempur (${m.targetX}, ${m.targetY}) - Tiba dalam **${remainingStr} menit**\n`;
       } else if (m.status === 'returning') {
         const remainingStr = Math.max(0, Math.floor((m.arrivalMs - Date.now()) / 60000));
-        marchStr += `• 🔙 Returning from (${m.targetX}, ${m.targetY}) - Arrives in **${remainingStr} mins**\n`;
+        marchStr += `• ${EMOJIS.btn_back || '🔙'} Pasukan Kembali dari (${m.targetX}, ${m.targetY}) - Tiba dalam **${remainingStr} menit**\n`;
       }
     }
-    if (marchStr) embed.addFields({ name: 'Active Marches', value: marchStr });
+    if (marchStr) embed.addFields({ name: '⚔️ Pasukan Sedang Berperang', value: marchStr });
   }
-
-  // To target a coordinate, we'll provide some quick targets or they can use a discord slash command
-  // Since we can't easily pop up a modal from a string customId via direct handler without interaction context,
-  // we will just list a few targets: "Attack Nearest Rebel", "Conquer Nearest Tile"
   
   const row1 = new ActionRowBuilder<ButtonBuilder>().addComponents(
-    new ButtonBuilder().setCustomId('march_rebel').setLabel('March vs Rebels (PvE)').setStyle(ButtonStyle.Primary),
-    new ButtonBuilder().setCustomId('march_conquer').setLabel('Conquer Nearest Resource').setStyle(ButtonStyle.Success),
-    new ButtonBuilder().setCustomId('march_capital').setLabel('Siege Nearest Capital').setStyle(ButtonStyle.Danger),
-    new ButtonBuilder().setCustomId('town_map').setLabel('Back to Map').setStyle(ButtonStyle.Secondary)
+    new ButtonBuilder().setCustomId('march_rebel').setLabel('Tumpas Pemberontak (PvE)').setEmoji(EMOJIS.fac_rebel || '👹').setStyle(ButtonStyle.Primary),
+    new ButtonBuilder().setCustomId('march_conquer').setLabel('Taklukkan Lahan Tambang').setEmoji(EMOJIS.map_town || '🚩').setStyle(ButtonStyle.Success),
+    new ButtonBuilder().setCustomId('march_capital').setLabel('Gempur Ibu Kota Wilayah').setEmoji(EMOJIS.map_capital || '🏛️').setStyle(ButtonStyle.Danger),
+    new ButtonBuilder().setCustomId('town_main').setLabel('Kembali').setEmoji(EMOJIS.btn_back || '🔙').setStyle(ButtonStyle.Secondary)
   );
 
   return { embeds: [embed], components: [row1] };
