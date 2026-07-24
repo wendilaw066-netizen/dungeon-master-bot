@@ -33,7 +33,7 @@
       "workersStrike": false
     },
     "gems": 0,
-    "coins": 155,
+    "coins": 152,
     "houses": 0,
     "pickaxeLevel": 1,
     "lastFarmTime": 1784812138220,
@@ -56,7 +56,7 @@
       "debtToPay": 0,
       "deadline": 0
     },
-    "lastUpkeepPaid": 1784887337733,
+    "lastUpkeepPaid": 1784890937733,
     "faction": "Shu",
     "town": {
       "tier": 2,
@@ -115,7 +115,7 @@
         "cows": 0,
         "horses": 0
       },
-      "lastAnimalIncome": 1784890556458,
+      "lastAnimalIncome": 1784893559074,
       "food": {
         "rice": 100,
         "milk": 10,
@@ -124,18 +124,18 @@
         "wool": 5
       },
       "weapons": {
-        "sword": 6,
-        "bow": 27,
-        "spear": 4,
-        "armor": 0
+        "sword": 0,
+        "bow": 25,
+        "spear": 5,
+        "armor": 1
       },
       "horses": 0,
       "peasantChildren": [],
       "povertyRate": 0,
       "hungerRate": 0,
       "army": {
-        "infantry": 5,
-        "archers": 7,
+        "infantry": 11,
+        "archers": 12,
         "cavalry": 0,
         "spearmen": 3,
         "catapults": 0
@@ -156,14 +156,14 @@
     "autoPlayActive": true,
     "materials": {
       "Iron Ore": 16,
-      "Wood": 115.86666666666798,
-      "Copper": 0.9666666666667091,
-      "Iron": 8.676666666666856,
-      "Silver": 36.83199999999891,
-      "Gold": 5.457999999999863
+      "Wood": 90.86666666666827,
+      "Copper": 4.300000000000049,
+      "Iron": 1.0100000000001925,
+      "Silver": 42.63199999999882,
+      "Gold": 5.657999999999841
     },
     "personality": "WARLORD",
-    "lastActiveTime": 1784890571462,
+    "lastActiveTime": 1784893559074,
     "dashboardLog": [
       "[AI-WARLORD] recruit_char_char_liubei",
       "[AI-WARLORD] recruit_char_char_liubei",
@@ -243,7 +243,7 @@
       "workersStrike": false
     },
     "gems": 0,
-    "coins": 128,
+    "coins": 124,
     "houses": 0,
     "pickaxeLevel": 1,
     "lastFarmTime": 1784812138221,
@@ -266,7 +266,7 @@
       "debtToPay": 0,
       "deadline": 0
     },
-    "lastUpkeepPaid": 1784887337754,
+    "lastUpkeepPaid": 1784890937754,
     "faction": "Wei",
     "town": {
       "tier": 3,
@@ -325,7 +325,7 @@
         "cows": 0,
         "horses": 0
       },
-      "lastAnimalIncome": 1784890556458,
+      "lastAnimalIncome": 1784893559074,
       "food": {
         "rice": 220,
         "milk": 10,
@@ -366,20 +366,20 @@
     "discordName": "Arga",
     "autoPlayActive": true,
     "materials": {
-      "Wood": 125.86666666666918,
-      "Copper": 0.06333333333336988,
-      "Iron": 0.04433333333335021,
-      "Silver": 24.015200000000537,
-      "Gold": 6.003800000000134,
+      "Wood": 145.86666666666946,
+      "Copper": 3.7300000000000337,
+      "Iron": 2.611000000000016,
+      "Silver": 24.895200000000617,
+      "Gold": 6.223800000000154,
       "Iron Ore": 12
     },
     "personality": "WARLORD",
-    "lastActiveTime": 1784890571463,
+    "lastActiveTime": 1784893559075,
     "dashboardLog": [
       "[AI-WARLORD] recruit_char_char_caocao",
       "[AI-WARLORD] recruit_char_char_caocao",
-      "[AI-WARLORD] forge_bow",
-      "[AI-WARLORD] forge_spear",
+      "[AI-WARLORD] recruit_char_char_caocao",
+      "[AI-WARLORD] recruit_char_char_caocao",
       "[AI-WARLORD] recruit_char_char_caocao",
       "[AI-WARLORD] recruit_char_char_caocao"
     ]
@@ -410,7 +410,7 @@
       "workersStrike": false
     },
     "gems": 0,
-    "coins": 0,
+    "coins": 10,
     "houses": 0,
     "pickaxeLevel": 1,
     "lastFarmTime": 1784812138222,
@@ -433,7 +433,7 @@
       "debtToPay": 0,
       "deadline": 0
     },
-    "lastUpkeepPaid": 1784887337756,
+    "lastUpkeepPaid": 1784890937756,
     "faction": "Wu",
     "town": {
       "tier": 3,
@@ -484,7 +484,7 @@
         "endTimestamp": 0,
         "unlockedTechs": []
       },
-      "morale": 70,
+      "morale": 55,
       "villagers": 50,
       "animals": {
         "chickens": 0,
@@ -492,7 +492,7 @@
         "cows": 0,
         "horses": 0
       },
-      "lastAnimalIncome": 1784890556459,
+      "lastAnimalIncome": 1784893559075,
       "food": {
         "rice": 440,
         "milk": 10,
@@ -527,7 +527,7 @@
         "x": 21,
         "y": 40
       },
-      "publicOrder": -100,
+      "publicOrder": -92.0416666666668,
       "generals": []
     },
     "discordName": "Luna",
@@ -540,13 +540,13 @@
       "Silver": 20
     },
     "personality": "MERCHANT",
-    "lastActiveTime": 1784890571463,
+    "lastActiveTime": 1784893559075,
     "dashboardLog": [
-      "[AI-MERCHANT] recruit_peasant",
       "👨‍🌾 Berhasil merekrut 1 Warga baru seharga 1 Coin!",
       "[AI-MERCHANT] recruit_peasant",
       "💸 Logistik Dibayar: 6 Koin, 0 Daging, 0 Kayu (1 jam).",
       "💸 Logistik Dibayar: 6 Koin, 0 Daging, 0 Kayu (1 jam).",
+      "🚨 GAGAL BAYAR LOGISTIK! Kas/Daging/Kayu kosong! Pasukan desersi dan moral hancur.",
       "🚨 GAGAL BAYAR LOGISTIK! Kas/Daging/Kayu kosong! Pasukan desersi dan moral hancur."
     ]
   },
@@ -576,7 +576,7 @@
       "workersStrike": false
     },
     "gems": 0,
-    "coins": 27,
+    "coins": 26,
     "houses": 0,
     "pickaxeLevel": 1,
     "lastFarmTime": 1784812138223,
@@ -599,7 +599,7 @@
       "debtToPay": 0,
       "deadline": 0
     },
-    "lastUpkeepPaid": 1784887337758,
+    "lastUpkeepPaid": 1784890937758,
     "faction": "Shu",
     "town": {
       "tier": 2,
@@ -658,7 +658,7 @@
         "cows": 0,
         "horses": 0
       },
-      "lastAnimalIncome": 1784890556459,
+      "lastAnimalIncome": 1784893559075,
       "food": {
         "rice": 100,
         "milk": 10,
@@ -699,21 +699,21 @@
     "discordName": "Kenzo",
     "autoPlayActive": true,
     "materials": {
-      "Wood": 65.86666666666898,
-      "Copper": 0.9666666666667046,
-      "Iron": 3.67666666666685,
-      "Silver": 31.831999999998907,
-      "Gold": 5.457999999999863
+      "Wood": 55.86666666666916,
+      "Copper": 4.300000000000043,
+      "Iron": 6.0100000000001925,
+      "Silver": 32.63199999999882,
+      "Gold": 5.657999999999841
     },
     "personality": "WARLORD",
-    "lastActiveTime": 1784890571463,
+    "lastActiveTime": 1784893559075,
     "dashboardLog": [
-      "💸 Logistik Dibayar: 2 Koin, 0 Daging, 0 Kayu (1 jam).",
-      "[AI-WARLORD] market_sell_wood",
       "[AI-WARLORD] forge_bow",
       "[AI-WARLORD] forge_sword",
       "💸 Logistik Dibayar: 2 Koin, 0 Daging, 0 Kayu (1 jam).",
-      "[AI-WARLORD] forge_bow"
+      "[AI-WARLORD] forge_bow",
+      "💸 Logistik Dibayar: 2 Koin, 0 Daging, 0 Kayu (1 jam).",
+      "[AI-WARLORD] market_sell_wood"
     ]
   },
   "Kira": {
@@ -742,7 +742,7 @@
       "workersStrike": false
     },
     "gems": 0,
-    "coins": 18,
+    "coins": 15,
     "houses": 0,
     "pickaxeLevel": 1,
     "lastFarmTime": 1784812138224,
@@ -765,7 +765,7 @@
       "debtToPay": 0,
       "deadline": 0
     },
-    "lastUpkeepPaid": 1784887337759,
+    "lastUpkeepPaid": 1784890937759,
     "faction": "Wei",
     "town": {
       "tier": 3,
@@ -816,7 +816,7 @@
         "endTimestamp": 0,
         "unlockedTechs": []
       },
-      "morale": 10,
+      "morale": 0,
       "villagers": 20,
       "animals": {
         "chickens": 0,
@@ -824,24 +824,24 @@
         "cows": 0,
         "horses": 0
       },
-      "lastAnimalIncome": 1784890556459,
+      "lastAnimalIncome": 1784893559075,
       "food": {
-        "rice": 220,
+        "rice": 180,
         "milk": 10,
         "meat": 10,
         "egg": 5,
         "wool": 5
       },
       "weapons": {
-        "sword": 3,
-        "bow": 19,
+        "sword": 4,
+        "bow": 22,
         "spear": 5,
         "armor": 0
       },
       "horses": 0,
       "peasantChildren": [],
       "povertyRate": 0,
-      "hungerRate": 53,
+      "hungerRate": 68,
       "army": {
         "infantry": 0,
         "archers": 0,
@@ -865,21 +865,21 @@
     "discordName": "Kira",
     "autoPlayActive": true,
     "materials": {
-      "Wood": 48.866666666665566,
-      "Copper": 0.050000000000080244,
-      "Iron": 0.034999999999986535,
-      "Silver": 27.01200000000072,
-      "Gold": 3.003000000000067,
+      "Wood": 27.19999999999885,
+      "Copper": 1.8833333333334132,
+      "Iron": 6.3183333333333245,
+      "Silver": 32.452000000000766,
+      "Gold": 3.1130000000000773,
       "Iron Ore": 6
     },
     "personality": "MERCHANT",
-    "lastActiveTime": 1784890571463,
+    "lastActiveTime": 1784893559075,
     "dashboardLog": [
       "[AI-MERCHANT] forge_bow",
       "💸 Logistik Dibayar: 3 Koin, 0 Daging, 0 Kayu (1 jam).",
-      "[AI-MERCHANT] market_sell_wood",
-      "💸 Logistik Dibayar: 3 Koin, 0 Daging, 0 Kayu (1 jam).",
-      "[AI-MERCHANT] forge_spear",
+      "[AI-MERCHANT] forge_bow",
+      "[AI-MERCHANT] forge_sword",
+      "[AI-MERCHANT] forge_bow",
       "[AI-MERCHANT] forge_bow"
     ]
   },
@@ -909,7 +909,7 @@
       "workersStrike": false
     },
     "gems": 0,
-    "coins": 2,
+    "coins": 0,
     "houses": 0,
     "pickaxeLevel": 1,
     "lastFarmTime": 1784812138224,
@@ -932,7 +932,7 @@
       "debtToPay": 0,
       "deadline": 0
     },
-    "lastUpkeepPaid": 1784887337761,
+    "lastUpkeepPaid": 1784890937761,
     "faction": "Wu",
     "town": {
       "tier": 3,
@@ -983,7 +983,7 @@
         "endTimestamp": 0,
         "unlockedTechs": []
       },
-      "morale": 85,
+      "morale": 70,
       "villagers": 40,
       "animals": {
         "chickens": 0,
@@ -991,7 +991,7 @@
         "cows": 0,
         "horses": 0
       },
-      "lastAnimalIncome": 1784890556459,
+      "lastAnimalIncome": 1784893559075,
       "food": {
         "rice": 360,
         "milk": 10,
@@ -1032,18 +1032,18 @@
     "discordName": "Evan",
     "autoPlayActive": true,
     "materials": {
-      "Wood": 61.866666666669495,
+      "Wood": 68.53333333333639,
       "Iron Ore": 8
     },
     "personality": "MERCHANT",
-    "lastActiveTime": 1784890571463,
+    "lastActiveTime": 1784893559075,
     "dashboardLog": [
-      "[AI-MERCHANT] market_buy_food",
       "[AI-MERCHANT] market_buy_food",
       "💸 Logistik Dibayar: 5 Koin, 0 Daging, 0 Kayu (1 jam).",
       "💸 Logistik Dibayar: 5 Koin, 0 Daging, 0 Kayu (1 jam).",
       "[AI-MERCHANT] market_sell_wood",
-      "💸 Logistik Dibayar: 5 Koin, 0 Daging, 0 Kayu (1 jam)."
+      "💸 Logistik Dibayar: 5 Koin, 0 Daging, 0 Kayu (1 jam).",
+      "🚨 GAGAL BAYAR LOGISTIK! Kas/Daging/Kayu kosong! Pasukan desersi dan moral hancur."
     ]
   },
   "Maya": {
@@ -1072,7 +1072,7 @@
       "workersStrike": false
     },
     "gems": 0,
-    "coins": 3,
+    "coins": 0,
     "houses": 0,
     "pickaxeLevel": 1,
     "lastFarmTime": 1784812138225,
@@ -1095,7 +1095,7 @@
       "debtToPay": 0,
       "deadline": 0
     },
-    "lastUpkeepPaid": 1784887337763,
+    "lastUpkeepPaid": 1784890937763,
     "faction": "Shu",
     "town": {
       "tier": 2,
@@ -1146,7 +1146,7 @@
         "endTimestamp": 0,
         "unlockedTechs": []
       },
-      "morale": 0,
+      "morale": 85,
       "villagers": 30,
       "animals": {
         "chickens": 0,
@@ -1154,7 +1154,7 @@
         "cows": 0,
         "horses": 0
       },
-      "lastAnimalIncome": 1784890556459,
+      "lastAnimalIncome": 1784893559075,
       "food": {
         "rice": 20,
         "milk": 10,
@@ -1194,22 +1194,22 @@
     "discordName": "Maya",
     "autoPlayActive": true,
     "materials": {
-      "Wood": 48.86666666666618,
-      "Copper": 0.46666666666667017,
-      "Iron": 1.8266666666667717,
-      "Silver": 25.911999999999182,
-      "Gold": 2.7279999999999314,
+      "Wood": 62.19999999999946,
+      "Copper": 2.1333333333333395,
+      "Iron": 2.993333333333443,
+      "Silver": 26.311999999999138,
+      "Gold": 2.8279999999999204,
       "Iron Ore": 8
     },
     "personality": "GAMBLER",
-    "lastActiveTime": 1784890571463,
+    "lastActiveTime": 1784893559075,
     "dashboardLog": [
-      "[AI-GAMBLER] forge_bow",
       "💸 Logistik Dibayar: 5 Koin, 0 Daging, 0 Kayu (1 jam).",
       "[AI-GAMBLER] forge_sword",
       "💸 Logistik Dibayar: 5 Koin, 0 Daging, 0 Kayu (1 jam).",
       "[AI-GAMBLER] market_sell_wood",
-      "[AI-GAMBLER] forge_bow"
+      "[AI-GAMBLER] forge_bow",
+      "🚨 GAGAL BAYAR LOGISTIK! Kas/Daging/Kayu kosong! Pasukan desersi dan moral hancur."
     ]
   },
   "Raka": {
@@ -1238,7 +1238,7 @@
       "workersStrike": false
     },
     "gems": 0,
-    "coins": 70,
+    "coins": 68,
     "houses": 0,
     "pickaxeLevel": 1,
     "lastFarmTime": 1784812138226,
@@ -1261,7 +1261,7 @@
       "debtToPay": 0,
       "deadline": 0
     },
-    "lastUpkeepPaid": 1784887337765,
+    "lastUpkeepPaid": 1784890937765,
     "faction": "Wei",
     "town": {
       "tier": 2,
@@ -1320,7 +1320,7 @@
         "cows": 0,
         "horses": 0
       },
-      "lastAnimalIncome": 1784890556459,
+      "lastAnimalIncome": 1784893559075,
       "food": {
         "rice": 90,
         "milk": 10,
@@ -1361,22 +1361,22 @@
     "discordName": "Raka",
     "autoPlayActive": true,
     "materials": {
-      "Wood": 45.86666666666865,
-      "Copper": 0.06333333333325708,
-      "Iron": 0.04433333333333067,
-      "Silver": 34.015200000001016,
-      "Gold": 6.003800000000134,
+      "Wood": 65.8666666666686,
+      "Copper": 3.729999999999921,
+      "Iron": 2.6109999999999967,
+      "Silver": 34.8952000000011,
+      "Gold": 6.223800000000154,
       "Iron Ore": 8
     },
     "personality": "WARLORD",
-    "lastActiveTime": 1784890571463,
+    "lastActiveTime": 1784893559075,
     "dashboardLog": [
-      "[AI-WARLORD] forge_bow",
       "💸 Logistik Dibayar: 2 Koin, 0 Daging, 0 Kayu (1 jam).",
       "[AI-WARLORD] forge_bow",
       "💸 Logistik Dibayar: 2 Koin, 0 Daging, 0 Kayu (1 jam).",
       "[AI-WARLORD] forge_bow",
-      "[AI-WARLORD] forge_sword"
+      "[AI-WARLORD] forge_sword",
+      "💸 Logistik Dibayar: 2 Koin, 0 Daging, 0 Kayu (1 jam)."
     ]
   },
   "Dina": {
@@ -1405,7 +1405,7 @@
       "workersStrike": false
     },
     "gems": 0,
-    "coins": 76,
+    "coins": 74,
     "houses": 0,
     "pickaxeLevel": 1,
     "lastFarmTime": 1784812138226,
@@ -1428,7 +1428,7 @@
       "debtToPay": 0,
       "deadline": 0
     },
-    "lastUpkeepPaid": 1784887337767,
+    "lastUpkeepPaid": 1784890937767,
     "faction": "Wu",
     "town": {
       "tier": 2,
@@ -1487,7 +1487,7 @@
         "cows": 0,
         "horses": 0
       },
-      "lastAnimalIncome": 1784890556459,
+      "lastAnimalIncome": 1784893559075,
       "food": {
         "rice": 90,
         "milk": 10,
@@ -1496,7 +1496,7 @@
         "wool": 5
       },
       "weapons": {
-        "sword": 4,
+        "sword": 5,
         "bow": 27,
         "spear": 6,
         "armor": 0
@@ -1528,22 +1528,22 @@
     "discordName": "Dina",
     "autoPlayActive": true,
     "materials": {
-      "Wood": 45.86666666666808,
-      "Copper": 0.9666666666667455,
-      "Iron": 8.676666666666856,
-      "Silver": 36.83199999999836,
-      "Gold": 5.457999999999863,
+      "Wood": 60.86666666666801,
+      "Copper": 4.300000000000084,
+      "Iron": 1.0100000000001943,
+      "Silver": 37.63199999999827,
+      "Gold": 5.657999999999841,
       "Iron Ore": 12
     },
     "personality": "WARLORD",
-    "lastActiveTime": 1784890571463,
+    "lastActiveTime": 1784893559075,
     "dashboardLog": [
-      "[AI-WARLORD] market_sell_wood",
-      "💸 Logistik Dibayar: 2 Koin, 0 Daging, 0 Kayu (1 jam).",
       "[AI-WARLORD] forge_bow",
       "💸 Logistik Dibayar: 2 Koin, 0 Daging, 0 Kayu (1 jam).",
       "[AI-WARLORD] market_sell_wood",
-      "[AI-WARLORD] forge_bow"
+      "[AI-WARLORD] forge_bow",
+      "💸 Logistik Dibayar: 2 Koin, 0 Daging, 0 Kayu (1 jam).",
+      "[AI-WARLORD] forge_sword"
     ]
   },
   "Bima": {
@@ -1572,7 +1572,7 @@
       "workersStrike": false
     },
     "gems": 0,
-    "coins": 7,
+    "coins": 5,
     "houses": 0,
     "pickaxeLevel": 1,
     "lastFarmTime": 1784812138227,
@@ -1595,7 +1595,7 @@
       "debtToPay": 0,
       "deadline": 0
     },
-    "lastUpkeepPaid": 1784887337769,
+    "lastUpkeepPaid": 1784890937769,
     "faction": "Shu",
     "town": {
       "tier": 3,
@@ -1654,7 +1654,7 @@
         "cows": 0,
         "horses": 0
       },
-      "lastAnimalIncome": 1784890556459,
+      "lastAnimalIncome": 1784893559075,
       "food": {
         "rice": 200,
         "milk": 10,
@@ -1695,22 +1695,22 @@
     "discordName": "Bima",
     "autoPlayActive": true,
     "materials": {
-      "Wood": 68.86666666666554,
-      "Copper": 0.4999999999999323,
-      "Iron": 6.850000000000107,
-      "Silver": 15.91999999999918,
-      "Gold": 2.729999999999931,
+      "Wood": 52.19999999999882,
+      "Copper": 2.1666666666666012,
+      "Iron": 8.016666666666778,
+      "Silver": 16.319999999999137,
+      "Gold": 2.82999999999992,
       "Iron Ore": 14
     },
     "personality": "MERCHANT",
-    "lastActiveTime": 1784890571463,
+    "lastActiveTime": 1784893559075,
     "dashboardLog": [
-      "💸 Logistik Dibayar: 3 Koin, 0 Daging, 0 Kayu (1 jam).",
-      "[AI-MERCHANT] forge_bow",
       "💸 Logistik Dibayar: 3 Koin, 0 Daging, 0 Kayu (1 jam).",
       "[AI-MERCHANT] market_sell_wood",
       "💸 Logistik Dibayar: 3 Koin, 0 Daging, 0 Kayu (1 jam).",
-      "[AI-MERCHANT] forge_bow"
+      "[AI-MERCHANT] forge_bow",
+      "💸 Logistik Dibayar: 3 Koin, 0 Daging, 0 Kayu (1 jam).",
+      "[AI-MERCHANT] market_sell_wood"
     ]
   },
   "Siska": {
@@ -1762,7 +1762,7 @@
       "debtToPay": 0,
       "deadline": 0
     },
-    "lastUpkeepPaid": 1784887337771,
+    "lastUpkeepPaid": 1784890937771,
     "faction": "Wei",
     "town": {
       "tier": 1,
@@ -1813,7 +1813,7 @@
         "endTimestamp": 0,
         "unlockedTechs": []
       },
-      "morale": 70,
+      "morale": 40,
       "villagers": 14,
       "animals": {
         "chickens": 0,
@@ -1821,9 +1821,9 @@
         "cows": 0,
         "horses": 0
       },
-      "lastAnimalIncome": 1784890556459,
+      "lastAnimalIncome": 1784893559075,
       "food": {
-        "rice": 20,
+        "rice": 0,
         "milk": 10,
         "meat": 10,
         "egg": 5,
@@ -1861,20 +1861,20 @@
     "discordName": "Siska",
     "autoPlayActive": true,
     "materials": {
-      "Wood": 61.86666666666779,
+      "Wood": 68.53333333333468,
       "Iron": 45,
       "Copper": 45,
       "Silver": 15,
       "Iron Ore": 8
     },
     "personality": "GAMBLER",
-    "lastActiveTime": 1784890571463,
+    "lastActiveTime": 1784893559075,
     "dashboardLog": [
-      "🚨 GAGAL BAYAR LOGISTIK! Kas/Daging/Kayu kosong! Pasukan desersi dan moral hancur.",
       "🚨 GAGAL BAYAR LOGISTIK! Kas/Daging/Kayu kosong! Pasukan desersi dan moral hancur.",
       "[AI-GAMBLER] market_sell_wood",
       "👨‍🌾 Berhasil merekrut 1 Warga baru seharga 1 Coin!",
       "[AI-GAMBLER] recruit_peasant",
+      "🚨 GAGAL BAYAR LOGISTIK! Kas/Daging/Kayu kosong! Pasukan desersi dan moral hancur.",
       "🚨 GAGAL BAYAR LOGISTIK! Kas/Daging/Kayu kosong! Pasukan desersi dan moral hancur."
     ]
   },
@@ -1904,7 +1904,7 @@
       "workersStrike": false
     },
     "gems": 0,
-    "coins": 127,
+    "coins": 125,
     "houses": 0,
     "pickaxeLevel": 1,
     "lastFarmTime": 1784812138228,
@@ -1927,7 +1927,7 @@
       "debtToPay": 0,
       "deadline": 0
     },
-    "lastUpkeepPaid": 1784887337773,
+    "lastUpkeepPaid": 1784890937773,
     "faction": "Wu",
     "town": {
       "tier": 2,
@@ -1986,7 +1986,7 @@
         "cows": 0,
         "horses": 0
       },
-      "lastAnimalIncome": 1784890556459,
+      "lastAnimalIncome": 1784893559075,
       "food": {
         "rice": 110,
         "milk": 10,
@@ -2027,15 +2027,15 @@
     "discordName": "Leo",
     "autoPlayActive": true,
     "materials": {
-      "Wood": 100.86666666667247,
-      "Copper": 0.9666666666667126,
-      "Iron": 3.6766666666668524,
-      "Silver": 31.83199999999918,
-      "Gold": 5.457999999999863,
+      "Wood": 120.86666666667276,
+      "Copper": 4.300000000000051,
+      "Iron": 6.010000000000195,
+      "Silver": 32.631999999999096,
+      "Gold": 5.657999999999841,
       "Iron Ore": 12
     },
     "personality": "WARLORD",
-    "lastActiveTime": 1784890571463,
+    "lastActiveTime": 1784893559075,
     "dashboardLog": [
       "[AI-WARLORD] recruit_char_char_sunjian",
       "[AI-WARLORD] recruit_char_char_sunjian",
@@ -2050,28 +2050,6 @@
     "items": {},
     "worldDisasters": [
       {
-        "id": "D_1784886397367996",
-        "type": "drought",
-        "x": -23,
-        "y": -24,
-        "radius": 5,
-        "durationMins": 85,
-        "startMs": 1784886397367,
-        "vx": -0.034490900479265306,
-        "vy": 0.07439490271511864
-      },
-      {
-        "id": "D_178488856499460",
-        "type": "blizzard",
-        "x": -42,
-        "y": 29,
-        "radius": 6,
-        "durationMins": 49,
-        "startMs": 1784888564994,
-        "vx": 0.08309395611076192,
-        "vy": -0.06187823901895682
-      },
-      {
         "id": "D_1784889956101306",
         "type": "plague",
         "x": 36,
@@ -2081,6 +2059,28 @@
         "startMs": 1784889956101,
         "vx": 0.05689335691227231,
         "vy": 0.050307482170792485
+      },
+      {
+        "id": "D_1784891517906255",
+        "type": "plague",
+        "x": -23,
+        "y": 41,
+        "radius": 4,
+        "durationMins": 48,
+        "startMs": 1784891517906,
+        "vx": 0.07405754817609488,
+        "vy": 0.006379271129673159
+      },
+      {
+        "id": "D_1784891517906592",
+        "type": "drought",
+        "x": -40,
+        "y": 43,
+        "radius": 5,
+        "durationMins": 38,
+        "startMs": 1784891517906,
+        "vx": 0.053567494241516925,
+        "vy": -0.006377778924404698
       }
     ],
     "tutorialStep": 5,
@@ -2253,7 +2253,7 @@
       "workersStrike": false
     },
     "gems": 0,
-    "coins": 11869320,
+    "coins": 11869278,
     "houses": 0,
     "pickaxeLevel": 1,
     "lastFarmTime": 1784812138229,
@@ -2276,7 +2276,7 @@
       "debtToPay": 0,
       "deadline": 0
     },
-    "lastUpkeepPaid": 1784888486006,
+    "lastUpkeepPaid": 1784892086006,
     "faction": "Wu",
     "town": {
       "tier": 6,
@@ -2329,7 +2329,7 @@
         "endTimestamp": 0,
         "unlockedTechs": []
       },
-      "morale": 45,
+      "morale": 35,
       "villagers": 220,
       "animals": {
         "chickens": 24,
@@ -2337,28 +2337,28 @@
         "cows": 16,
         "horses": 0
       },
-      "lastAnimalIncome": 1784890556459,
+      "lastAnimalIncome": 1784893559075,
       "food": {
-        "rice": 2385,
-        "milk": 605.3000000000045,
-        "meat": 412.4000000000059,
-        "egg": 259.3000000000016,
-        "wool": 178.09999999999957
+        "rice": 2425,
+        "milk": 685.3000000000056,
+        "meat": 467.06666666667445,
+        "egg": 299.30000000000217,
+        "wool": 204.76666666666614
       },
       "weapons": {
         "sword": 0,
-        "bow": 119,
-        "spear": 22,
+        "bow": 128,
+        "spear": 24,
         "armor": 1
       },
-      "horses": 0.26666666666667377,
+      "horses": 0.10000000000000865,
       "peasantChildren": [],
       "povertyRate": 22,
       "hungerRate": 74,
       "army": {
-        "infantry": 10,
-        "archers": 11,
-        "cavalry": 4,
+        "infantry": 12,
+        "archers": 13,
+        "cavalry": 5,
         "factionUnits": 0,
         "mercenaries": 0,
         "imperialGuards": 0,
@@ -2379,7 +2379,7 @@
         "liubei",
         "sunjian"
       ],
-      "publicOrder": 8.31000000000018,
+      "publicOrder": 6.476666666666826,
       "activeParty": [
         "sunjian",
         "liubei"
@@ -2389,15 +2389,15 @@
     "discordName": "Hazzel",
     "isAuto": true,
     "materials": {
-      "Wood": 677.6000000000023,
-      "Copper": 3.00000000000004,
-      "Iron": 6.099999999999946,
-      "Silver": 188.52000000000123,
-      "Gold": 43.38000000000031,
+      "Wood": 764.2666666666674,
+      "Copper": 3.0000000000000417,
+      "Iron": 4.599999999999932,
+      "Silver": 201.72000000000173,
+      "Gold": 46.68000000000043,
       "Iron Ore": 4
     },
     "personality": "WARLORD",
-    "lastActiveTime": 1784890571466,
+    "lastActiveTime": 1784893559077,
     "dashboardLog": [
       "[AI-WARLORD] recruit_covert_spy",
       "[AI-WARLORD] recruit_char_char_sunjian",

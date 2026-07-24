@@ -134,6 +134,7 @@ export function handleGeneralAction(player: PlayerInventory, action: string, db:
   
   if (action === 'gacha_general') {
     if (player.town.tier < 4) return `⚠️ Gacha failed! You must upgrade your town to Tier 4 first.`;
+    if ((player.town.generals?.length || 0) >= 2) return `❌ Batas maksimal 2 Jenderal sudah tercapai!`;
     
     const cost = getGachaCost(player.town.generals.length);
     if (player.coins < cost) return `❌ Not enough Coins! You need ${cost} Coin to recruit.`;
@@ -153,6 +154,34 @@ export function handleGeneralAction(player: PlayerInventory, action: string, db:
     saveMinigameDB(db);
     
     return `🎉 **GACHA SUCCESS!** You spent ${cost} Coin and recruited [${pulled.rarity}] **${pulled.name}**!\n> *${pulled.buffDesc}*`;
+  }
+  
+  if (action.startsWith('recruit_char_')) {
+    const charId = action.replace('recruit_char_', '');
+    const { THREE_KINGDOMS_ROSTER } = require('./characters');
+    const targetChar = THREE_KINGDOMS_ROSTER.find((c: any) => c.id === charId);
+    if (!targetChar) return `❌ Character not found!`;
+    
+    if (!player.characters) player.characters = [];
+    if (player.characters.some((c: any) => c.id === targetChar.id || c.id === `char_${targetChar.id}`)) {
+      return `⚠️ Jenderal ${targetChar.name} sudah direkrut sebelumnya.`;
+    }
+    
+    if (player.coins < targetChar.price) {
+      return `❌ Koin tidak cukup! Butuh ${targetChar.price} Coin.`;
+    }
+    
+    player.coins -= targetChar.price;
+    player.characters.push(targetChar);
+    if (!player.town.generals) player.town.generals = [];
+    if (!player.town.generals.includes(targetChar.id)) {
+      player.town.generals.push(targetChar.id);
+    }
+    if (typeof targetChar.effect === 'function') {
+      targetChar.effect(player.town);
+    }
+    saveMinigameDB(db);
+    return `📜 Berhasil merekrut Jenderal **${targetChar.name}** ke Kabinet Istana!`;
   }
   
   if (action.startsWith('equip_general_')) {
