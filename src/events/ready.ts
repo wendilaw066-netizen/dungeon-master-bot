@@ -585,6 +585,7 @@ function startOwnerDashboard(client: Client) {
       // Start Tunnel (Cloudflared with Localtunnel Fallback)
       const startTunnel = async () => {
         try {
+          (global as any).cloudflareDashboardUrl = null;
           const { spawn } = require('child_process');
           const path = require('path');
           const cfPath = path.join(process.cwd(), 'node_modules', 'cloudflared', 'bin', 'cloudflared.exe');
@@ -594,7 +595,7 @@ function startOwnerDashboard(client: Client) {
           cf.stderr.on('data', (data: Buffer) => {
             const output = data.toString();
             const match = output.match(/https:\/\/[a-zA-Z0-9-]+\.trycloudflare\.com/);
-            if (match && !(global as any).cloudflareDashboardUrl) {
+            if (match) {
               gotUrl = true;
               (global as any).cloudflareDashboardUrl = match[0];
               logger.success(`Cloudflare Tunnel URL: ${match[0]}`, 'Dashboard');

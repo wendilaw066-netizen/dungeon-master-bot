@@ -115,7 +115,7 @@
         "cows": 0,
         "horses": 0
       },
-      "lastAnimalIncome": 1784898845277,
+      "lastAnimalIncome": 1784899213904,
       "food": {
         "rice": 100,
         "milk": 10,
@@ -162,14 +162,14 @@
     "autoPlayActive": true,
     "materials": {
       "Iron Ore": 16,
-      "Wood": 31.066666666668354,
-      "Copper": 0.1666666666667154,
-      "Iron": 0.11666666666686926,
-      "Silver": 49.03999999999866,
-      "Gold": 6.009999999999803
+      "Wood": 33.466666666668345,
+      "Copper": 0.5666666666667154,
+      "Iron": 0.3966666666668691,
+      "Silver": 49.13599999999865,
+      "Gold": 6.0339999999998
     },
     "personality": "WARLORD",
-    "lastActiveTime": 1784898890295,
+    "lastActiveTime": 1784899258923,
     "dashboardLog": [
       "[AI-WARLORD] forge_bow",
       "[AI-WARLORD] forge_sword",
@@ -342,7 +342,7 @@
         "cows": 0,
         "horses": 0
       },
-      "lastAnimalIncome": 1784898845277,
+      "lastAnimalIncome": 1784899213904,
       "food": {
         "rice": 220,
         "milk": 10,
@@ -389,15 +389,15 @@
     "discordName": "Arga",
     "autoPlayActive": true,
     "materials": {
-      "Wood": 41.06666666666963,
-      "Copper": 0.18333333333336216,
-      "Iron": 7.128333333333333,
-      "Silver": 26.44400000000076,
-      "Gold": 6.61100000000019,
+      "Wood": 43.466666666669624,
+      "Copper": 0.6233333333333623,
+      "Iron": 7.436333333333331,
+      "Silver": 26.54960000000077,
+      "Gold": 6.637400000000192,
       "Iron Ore": 12
     },
     "personality": "WARLORD",
-    "lastActiveTime": 1784898890295,
+    "lastActiveTime": 1784899258923,
     "dashboardLog": [
       "[AI-WARLORD] market_sell_wood",
       "💸 Logistik Dibayar: 4 Koin, 0 Daging, 0 Kayu (1 jam).",
@@ -526,7 +526,7 @@
         "cows": 0,
         "horses": 0
       },
-      "lastAnimalIncome": 1784898845277,
+      "lastAnimalIncome": 1784899213904,
       "food": {
         "rice": 430,
         "milk": 10,
@@ -561,7 +561,7 @@
         "x": 21,
         "y": 40
       },
-      "publicOrder": -57.17499999999991,
+      "publicOrder": -57.52499999999989,
       "generals": []
     },
     "discordName": "Luna",
@@ -574,7 +574,7 @@
       "Silver": 20
     },
     "personality": "MERCHANT",
-    "lastActiveTime": 1784898890295,
+    "lastActiveTime": 1784899258923,
     "dashboardLog": [
       "💸 Logistik Dibayar: 6 Koin, 0 Daging, 0 Kayu (1 jam).",
       "💸 Logistik Dibayar: 6 Koin, 0 Daging, 0 Kayu (1 jam).",
@@ -692,7 +692,7 @@
         "cows": 0,
         "horses": 0
       },
-      "lastAnimalIncome": 1784898845277,
+      "lastAnimalIncome": 1784899213904,
       "food": {
         "rice": 100,
         "milk": 10,
@@ -733,14 +733,14 @@
     "discordName": "Kenzo",
     "autoPlayActive": true,
     "materials": {
-      "Wood": 36.06666666666932,
-      "Copper": 0.16666666666671007,
-      "Iron": 0.11666666666687459,
-      "Silver": 34.03999999999866,
-      "Gold": 6.009999999999803
+      "Wood": 38.46666666666931,
+      "Copper": 0.5666666666667101,
+      "Iron": 0.39666666666687445,
+      "Silver": 34.13599999999865,
+      "Gold": 6.0339999999998
     },
     "personality": "WARLORD",
-    "lastActiveTime": 1784898890295,
+    "lastActiveTime": 1784899258923,
     "dashboardLog": [
       "[AI-WARLORD] forge_bow",
       "💸 Logistik Dibayar: 2 Koin, 0 Daging, 0 Kayu (1 jam).",
@@ -858,7 +858,7 @@
         "cows": 0,
         "horses": 0
       },
-      "lastAnimalIncome": 1784898845277,
+      "lastAnimalIncome": 1784899213904,
       "food": {
         "rice": 170,
         "milk": 10,
@@ -899,15 +899,15 @@
     "discordName": "Kira",
     "autoPlayActive": true,
     "materials": {
-      "Wood": 40.666666666665435,
-      "Copper": 0.11000000000008882,
-      "Iron": 8.576999999999996,
-      "Silver": 33.22640000000084,
-      "Gold": 3.306600000000095,
+      "Wood": 42.26666666666543,
+      "Copper": 0.3300000000000889,
+      "Iron": 8.730999999999993,
+      "Silver": 33.27920000000084,
+      "Gold": 3.3198000000000962,
       "Iron Ore": 6
     },
     "personality": "MERCHANT",
-    "lastActiveTime": 1784898890295,
+    "lastActiveTime": 1784899258923,
     "dashboardLog": [
       "[AI-MERCHANT] forge_sword",
       "[AI-MERCHANT] forge_bow",
@@ -1025,7 +1025,7 @@
         "cows": 0,
         "horses": 0
       },
-      "lastAnimalIncome": 1784898845277,
+      "lastAnimalIncome": 1784899213905,
       "food": {
         "rice": 360,
         "milk": 10,
@@ -1060,17 +1060,17 @@
         "x": 11,
         "y": 33
       },
-      "publicOrder": -80.11499999999998,
+      "publicOrder": -80.34499999999994,
       "generals": []
     },
     "discordName": "Evan",
     "autoPlayActive": true,
     "materials": {
-      "Wood": 50.26666666667029,
+      "Wood": 51.06666666667029,
       "Iron Ore": 8
     },
     "personality": "MERCHANT",
-    "lastActiveTime": 1784898890295,
+    "lastActiveTime": 1784899258923,
     "dashboardLog": [
       "[AI-MERCHANT] market_sell_wood",
       "💸 Logistik Dibayar: 5 Koin, 0 Daging, 0 Kayu (1 jam).",
@@ -1188,7 +1188,7 @@
         "cows": 0,
         "horses": 0
       },
-      "lastAnimalIncome": 1784898845277,
+      "lastAnimalIncome": 1784899213905,
       "food": {
         "rice": 0,
         "milk": 10,
@@ -1228,15 +1228,15 @@
     "discordName": "Maya",
     "autoPlayActive": true,
     "materials": {
-      "Wood": 45.666666666666046,
-      "Copper": 0.06666666666666299,
-      "Iron": 5.046666666666784,
-      "Silver": 27.01599999999906,
-      "Gold": 3.003999999999901,
+      "Wood": 47.26666666666604,
+      "Copper": 0.26666666666666294,
+      "Iron": 5.186666666666785,
+      "Silver": 27.063999999999055,
+      "Gold": 3.0159999999998997,
       "Iron Ore": 8
     },
     "personality": "GAMBLER",
-    "lastActiveTime": 1784898890295,
+    "lastActiveTime": 1784899258923,
     "dashboardLog": [
       "[AI-GAMBLER] forge_bow",
       "🚨 GAGAL BAYAR LOGISTIK! Kas/Daging/Kayu kosong! Pasukan desersi dan moral hancur.",
@@ -1354,7 +1354,7 @@
         "cows": 0,
         "horses": 0
       },
-      "lastAnimalIncome": 1784898845277,
+      "lastAnimalIncome": 1784899213905,
       "food": {
         "rice": 90,
         "milk": 10,
@@ -1395,15 +1395,15 @@
     "discordName": "Raka",
     "autoPlayActive": true,
     "materials": {
-      "Wood": 51.0666666666689,
-      "Copper": 0.18333333333324936,
-      "Iron": 7.128333333333313,
-      "Silver": 36.44400000000124,
-      "Gold": 6.61100000000019,
+      "Wood": 53.46666666666889,
+      "Copper": 0.6233333333332495,
+      "Iron": 7.4363333333333115,
+      "Silver": 36.54960000000125,
+      "Gold": 6.637400000000192,
       "Iron Ore": 8
     },
     "personality": "WARLORD",
-    "lastActiveTime": 1784898890295,
+    "lastActiveTime": 1784899258923,
     "dashboardLog": [
       "💸 Logistik Dibayar: 2 Koin, 0 Daging, 0 Kayu (1 jam).",
       "💸 Logistik Dibayar: 2 Koin, 0 Daging, 0 Kayu (1 jam).",
@@ -1439,7 +1439,7 @@
       "workersStrike": false
     },
     "gems": 0,
-    "coins": 71,
+    "coins": 61,
     "houses": 0,
     "pickaxeLevel": 1,
     "lastFarmTime": 1784812138226,
@@ -1513,7 +1513,7 @@
         "endTimestamp": 0,
         "unlockedTechs": []
       },
-      "morale": 60,
+      "morale": 55,
       "villagers": 10,
       "animals": {
         "chickens": 0,
@@ -1521,9 +1521,9 @@
         "cows": 0,
         "horses": 0
       },
-      "lastAnimalIncome": 1784898845277,
+      "lastAnimalIncome": 1784899213905,
       "food": {
-        "rice": 90,
+        "rice": 110,
         "milk": 10,
         "meat": 10,
         "egg": 5,
@@ -1562,22 +1562,22 @@
     "discordName": "Dina",
     "autoPlayActive": true,
     "materials": {
-      "Wood": 46.06666666666819,
-      "Copper": 0.16666666666675092,
-      "Iron": 5.116666666666872,
-      "Silver": 39.039999999998116,
-      "Gold": 6.009999999999803,
+      "Wood": 48.46666666666818,
+      "Copper": 0.5666666666667509,
+      "Iron": 5.3966666666668734,
+      "Silver": 39.135999999998106,
+      "Gold": 6.0339999999998,
       "Iron Ore": 12
     },
     "personality": "WARLORD",
-    "lastActiveTime": 1784898890295,
+    "lastActiveTime": 1784899258923,
     "dashboardLog": [
-      "[AI-WARLORD] forge_sword",
       "[AI-WARLORD] forge_bow",
       "💸 Logistik Dibayar: 2 Koin, 0 Daging, 0 Kayu (1 jam).",
       "[AI-WARLORD] market_sell_wood",
       "💸 Logistik Dibayar: 2 Koin, 0 Daging, 0 Kayu (1 jam).",
-      "[AI-WARLORD] forge_bow"
+      "[AI-WARLORD] forge_bow",
+      "[AI-WARLORD] market_buy_food"
     ]
   },
   "Bima": {
@@ -1688,7 +1688,7 @@
         "cows": 0,
         "horses": 0
       },
-      "lastAnimalIncome": 1784898845277,
+      "lastAnimalIncome": 1784899213905,
       "food": {
         "rice": 200,
         "milk": 10,
@@ -1729,15 +1729,15 @@
     "discordName": "Bima",
     "autoPlayActive": true,
     "materials": {
-      "Wood": 5.66666666666543,
-      "Copper": 10.099999999999921,
-      "Iron": 5.070000000000121,
-      "Silver": 27.02399999999906,
-      "Gold": 3.0059999999999008,
+      "Wood": 7.266666666665429,
+      "Copper": 10.29999999999992,
+      "Iron": 5.210000000000122,
+      "Silver": 27.071999999999054,
+      "Gold": 3.0179999999998994,
       "Iron Ore": 14
     },
     "personality": "MERCHANT",
-    "lastActiveTime": 1784898890295,
+    "lastActiveTime": 1784899258923,
     "dashboardLog": [
       "🥷 Berhasil melatih 1 Prajurit Infantri!",
       "[AI-MERCHANT] train_infantry",
@@ -1855,7 +1855,7 @@
         "cows": 0,
         "horses": 0
       },
-      "lastAnimalIncome": 1784898845277,
+      "lastAnimalIncome": 1784899213905,
       "food": {
         "rice": 0,
         "milk": 10,
@@ -1895,14 +1895,14 @@
     "discordName": "Siska",
     "autoPlayActive": true,
     "materials": {
-      "Wood": 50.266666666668584,
+      "Wood": 51.06666666666858,
       "Iron": 45,
       "Copper": 45,
       "Silver": 15,
       "Iron Ore": 8
     },
     "personality": "GAMBLER",
-    "lastActiveTime": 1784898890295,
+    "lastActiveTime": 1784899258923,
     "dashboardLog": [
       "🚨 GAGAL BAYAR LOGISTIK! Kas/Daging/Kayu kosong! Pasukan desersi dan moral hancur.",
       "🚨 GAGAL BAYAR LOGISTIK! Kas/Daging/Kayu kosong! Pasukan desersi dan moral hancur.",
@@ -2020,7 +2020,7 @@
         "cows": 0,
         "horses": 0
       },
-      "lastAnimalIncome": 1784898845277,
+      "lastAnimalIncome": 1784899213905,
       "food": {
         "rice": 110,
         "milk": 10,
@@ -2067,15 +2067,15 @@
     "discordName": "Leo",
     "autoPlayActive": true,
     "materials": {
-      "Wood": 36.06666666667294,
-      "Copper": 0.16666666666671806,
-      "Iron": 0.11666666666687814,
-      "Silver": 34.03999999999894,
-      "Gold": 6.009999999999803,
+      "Wood": 38.46666666667293,
+      "Copper": 0.566666666666718,
+      "Iron": 0.396666666666878,
+      "Silver": 34.13599999999893,
+      "Gold": 6.0339999999998,
       "Iron Ore": 12
     },
     "personality": "WARLORD",
-    "lastActiveTime": 1784898890295,
+    "lastActiveTime": 1784899258923,
     "dashboardLog": [
       "[AI-WARLORD] forge_bow",
       "💸 Logistik Dibayar: 2 Koin, 0 Daging, 0 Kayu (1 jam).",
@@ -2101,17 +2101,6 @@
     "items": {},
     "worldDisasters": [
       {
-        "id": "D_178489428301540",
-        "type": "drought",
-        "x": 50,
-        "y": -43,
-        "radius": 7,
-        "durationMins": 77,
-        "startMs": 1784894283015,
-        "vx": -0.023468578972858346,
-        "vy": -0.08929327362538278
-      },
-      {
         "id": "D_1784896264014777",
         "type": "drought",
         "x": 9,
@@ -2132,6 +2121,17 @@
         "startMs": 1784898365057,
         "vx": 0.08532876061227056,
         "vy": -0.03141435663175183
+      },
+      {
+        "id": "D_1784898905304210",
+        "type": "drought",
+        "x": 9,
+        "y": -48,
+        "radius": 7,
+        "durationMins": 68,
+        "startMs": 1784898905304,
+        "vx": 0.09160439151476336,
+        "vy": -0.09124685868415923
       }
     ],
     "tutorialStep": 5,
@@ -2304,7 +2304,7 @@
       "workersStrike": false
     },
     "gems": 0,
-    "coins": 11869061,
+    "coins": 11869067,
     "houses": 0,
     "pickaxeLevel": 1,
     "lastFarmTime": 1784812138229,
@@ -2388,21 +2388,21 @@
         "cows": 16,
         "horses": 0
       },
-      "lastAnimalIncome": 1784898845277,
+      "lastAnimalIncome": 1784899213905,
       "food": {
         "rice": 2500,
-        "milk": 826.1000000000076,
-        "meat": 575.4000000000054,
-        "egg": 369.7000000000032,
-        "wool": 251.6999999999993
+        "milk": 835.7000000000078,
+        "meat": 583.400000000005,
+        "egg": 374.50000000000324,
+        "wool": 254.8999999999993
       },
       "weapons": {
         "sword": 0,
-        "bow": 143,
+        "bow": 145,
         "spear": 27,
         "armor": 1
       },
-      "horses": 0.5666666666666771,
+      "horses": 0.6666666666666774,
       "peasantChildren": [],
       "povertyRate": 22,
       "hungerRate": 74,
@@ -2432,7 +2432,7 @@
         "char_sunjian",
         "char_sunce"
       ],
-      "publicOrder": 13.250000000000126,
+      "publicOrder": 13.030000000000124,
       "activeParty": [
         "sunjian",
         "liubei"
@@ -2442,22 +2442,22 @@
     "discordName": "Hazzel",
     "isAuto": true,
     "materials": {
-      "Wood": 923.1999999999981,
-      "Copper": 4.800000000000045,
-      "Iron": 2.3599999999999137,
-      "Silver": 224.9520000000026,
-      "Gold": 52.48800000000065,
+      "Wood": 930.3999999999979,
+      "Copper": 1.4000000000000452,
+      "Iron": 6.979999999999913,
+      "Silver": 226.53600000000267,
+      "Gold": 52.88400000000067,
       "Iron Ore": 4
     },
     "personality": "WARLORD",
-    "lastActiveTime": 1784898890297,
+    "lastActiveTime": 1784899258923,
     "dashboardLog": [
       "[AI-WARLORD] recruit_covert_spy",
       "[AI-WARLORD] recruit_covert_spy",
       "[AI-WARLORD] recruit_covert_spy",
       "[AI-WARLORD] recruit_covert_spy",
-      "[AI-WARLORD] recruit_covert_spy",
-      "[AI-WARLORD] recruit_covert_spy"
+      "[AI-WARLORD] forge_bow",
+      "[AI-WARLORD] forge_bow"
     ],
     "activeSession": {
       "channelId": "1419848898293268485",
