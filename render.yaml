@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: dungeon-master-bot
+    env: node
+    plan: free
+    buildCommand: npm run build
+    startCommand: npm start
+    envVars:
+      - key: DISCORD_TOKEN
+        sync: false
+      - key: CLIENT_ID
+        value: "1527910579443073136"
+      - key: GUILD_ID
+        value: "1419848896762613921"
