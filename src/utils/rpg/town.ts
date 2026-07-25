@@ -941,13 +941,11 @@ export async function handleTownAction(db: any, player: PlayerInventory, action:
         if (animalType === 'chicken') town.animals.chickens = (town.animals.chickens || 0) + 1;
         if (animalType === 'goat') town.animals.goats = (town.animals.goats || 0) + 1;
         if (animalType === 'cow') town.animals.cows = (town.animals.cows || 0) + 1;
-        pushDashboardLog(player, `🐄 Berhasil membeli 1 ${animalType.toUpperCase()} seharga ${cost} Coin!`);
       }
     }
     saveMinigameDB(db);
     return handleTownAction(db, player, 'animals', userName, guild);
   }
-
   if (action === 'toggle_auto') {
     player.isAuto = !player.isAuto;
     pushDashboardLog(player, player.isAuto ? `🤖 Auto Play Diaktifkan! AI Otomatis mengurus kota Anda.` : `🤖 Auto Play Dimatikan. Anda mengambil alih pemerintahan.`);
@@ -993,95 +991,15 @@ export async function handleTownAction(db: any, player: PlayerInventory, action:
   if (action === 'march_menu') {
     return renderMarchMenu(player, userName, db);
   }
-      if (action.startsWith('march_')) {
+  if (action.startsWith('march_')) {
     return handleMarchAction(player, action, db);
   }
-
-  // ── BUY ANIMALS DIALOG ──
-  if (action === 'animals') {
-    const cap = animalCapacity(town);
-    const curr = totalAnimals(town);
-    
-    const embed = new EmbedBuilder()
-      .setColor(0xE67E22)
-      .setTitle('🐄 Ranch Market — Buy Livestock')
-      .setDescription(
-        `Purchase animals to produce food reserves passively inside your Ranches:\n\n` +
-        `• **Current Livestock count:** \`${curr} / ${cap}\` animals\n\n` +
-        `🐔 **Chicken (Cost: 1 Coin)**\n• Produces: \`Meat\` & \`Eggs\` every 30 mins.\n\n` +
-        `🐐 **Goat (Cost: 1 Coin)**\n• Produces: \`Milk\` & \`Wool\` every 30 mins.\n\n` +
-        `🐄 **Cow (Cost: 4 Coin)**\n• Produces: \`Milk\` (x2) & \`Meat\` every 30 mins.`
-      )
-      .addFields(getCashflowField(player));
-
-    const row = new ActionRowBuilder<ButtonBuilder>().addComponents(
-      new ButtonBuilder().setCustomId('town_buy_animal_chicken').setLabel('Buy Chicken').setEmoji('🐔').setStyle(ButtonStyle.Success).setDisabled(curr >= cap),
-      new ButtonBuilder().setCustomId('town_buy_animal_goat').setLabel('Buy Goat').setEmoji('🐐').setStyle(ButtonStyle.Success).setDisabled(curr >= cap),
-      new ButtonBuilder().setCustomId('town_buy_animal_cow').setLabel('Buy Cow').setEmoji('🐄').setStyle(ButtonStyle.Success).setDisabled(curr >= cap)
-    );
-    const nav = new ActionRowBuilder<ButtonBuilder>().addComponents(new ButtonBuilder().setCustomId('town_menu_upgrading').setLabel('Back').setEmoji('🔙').setStyle(ButtonStyle.Secondary)); return { embeds: [embed], components: [row, nav] };
-  }
-
-  if (action.startsWith('raid_player_')) {
-    const targetId = action.replace('raid_player_', '');
-    const targetPlayer = db.players?.[targetId] || db[targetId];
-    
-    if (!targetPlayer) {
-      pushDashboardLog(player, `❌ Siege failed: Target domain not found!`);
-      return handleTownAction(db, player, 'siege_menu', userName, guild);
+  if (action === 'deploy_dungeon' || action.startsWith('idle_')) {
+    const { handleIdleExpeditionAction, renderIdleExpeditionMenu } = require('./idle_expedition');
+    if (action.startsWith('idle_')) {
+      return handleIdleExpeditionAction(db, player, action, userName);
     }
-
-    // CHECK SPY INTEL
-    let spyIntel = "";
-    if (town.covertOps && town.covertOps.spies > 0) {
-      town.covertOps.spies--; // consume 1 spy
-      spyIntel = ` 👁️ Spy Intel: Enemy has ~${Math.floor(((targetPlayer.town?.army?.infantry || 0) + (targetPlayer.town?.army?.archers || 0)) * (0.8 + Math.random()*0.4))} troops.`;
-    }
-
-    const originX = town.location?.x || 0;
-    const originY = town.location?.y || 0;
-    const targetX = targetPlayer.town?.location?.x || 0;
-    const targetY = targetPlayer.town?.location?.y || 0;
-    
-    // Calculate Euclidean distance
-    const dist = Math.sqrt(Math.pow(targetX - originX, 2) + Math.pow(targetY - originY, 2));
-    
-    // Default speed: 5 minutes (300,000 ms) per unit of distance. Minimum 1 minute.
-    const travelMs = Math.max(60000, dist * 300000);
-    const now = Date.now();
-
-    const march: import('../minigame').ArmyMarch = {
-      id: `march_${Date.now()}_${Math.random().toString(36).substring(2, 7)}`,
-      targetId: targetId,
-      targetX,
-      targetY,
-      startMs: now,
-      arrivalMs: now + travelMs,
-      army: {
-        infantry: town.army?.infantry || 0,
-        archers: town.army?.archers || 0,
-        cavalry: town.army?.cavalry || 0,
-        spearmen: town.army?.spearmen || 0,
-        catapults: town.army?.catapults || 0,
-        mercenaries: town.army?.mercenaries || 0,
-        factionUnits: town.army?.factionUnits || 0
-      },
-      type: 'attack_player',
-      status: 'marching'
-    };
-
-    // Army leaves the town
-    if (town.army) {
-      town.army.infantry = 0; town.army.archers = 0; town.army.cavalry = 0;
-      town.army.spearmen = 0; town.army.catapults = 0; town.army.mercenaries = 0; town.army.factionUnits = 0;
-    }
-
-    if (!town.marches) town.marches = [];
-    town.marches.push(march);
-
-    const mins = Math.ceil(travelMs / 60000);
-    pushDashboardLog(player, `🚩 MARCH DEPLOYED! Your army is marching to attack ${targetPlayer.discordName || targetId}. Arrival in ~${mins} minutes.${spyIntel}`);
-
+    return renderIdleExpeditionMenu(player, userName);
     saveMinigameDB(db);
     return renderTownMenu(player, userName, db, 'military');
   }

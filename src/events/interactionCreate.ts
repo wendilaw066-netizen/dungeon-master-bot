@@ -223,7 +223,7 @@ const interactionCreateEvent: BotEvent = {
         }
 
         if (interaction.customId === 'town_deploy_dungeon') {
-          await interaction.deferUpdate().catch(() => null);
+          if (!interaction.deferred && !interaction.replied) await interaction.deferUpdate().catch(() => null);
           const { renderIdleExpeditionMenu } = require('../utils/rpg/idle_expedition');
           const resp = renderIdleExpeditionMenu(player, interaction.user.username);
           await interaction.editReply(resp as any).catch(() => null);
@@ -231,7 +231,7 @@ const interactionCreateEvent: BotEvent = {
         }
 
         if (interaction.customId.startsWith('idle_')) {
-          await interaction.deferUpdate().catch(() => null);
+          if (!interaction.deferred && !interaction.replied) await interaction.deferUpdate().catch(() => null);
           const { handleIdleExpeditionAction } = require('../utils/rpg/idle_expedition');
           const resp = handleIdleExpeditionAction(db, player, interaction.customId, interaction.user.username);
           await interaction.editReply(resp as any).catch(() => null);
