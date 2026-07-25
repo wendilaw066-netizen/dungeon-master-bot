@@ -200,7 +200,7 @@ const interactionCreateEvent: BotEvent = {
       }
 
       // Town FSM
-      if (interaction.customId.startsWith('town_')) {
+      if (interaction.customId.startsWith('town_') || interaction.customId.startsWith('idle_')) {
         const db = loadMinigameDB();
         const player = getPlayer(db, interaction.user.id);
 

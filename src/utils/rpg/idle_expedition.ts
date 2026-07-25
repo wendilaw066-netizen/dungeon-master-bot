@@ -69,9 +69,9 @@ export function renderIdleExpeditionMenu(player: PlayerInventory, userName: stri
     const totalTroops = (town.army?.infantry || 0) + (town.army?.archers || 0) + (town.army?.cavalry || 0) + (town.army?.spearmen || 0);
 
     const row = new ActionRowBuilder<ButtonBuilder>().addComponents(
-      new ButtonBuilder().setCustomId('idle_deploy_mist_valley').setLabel('Ekspedisi Lembah Kabut').setEmoji('🌫️').setStyle(ButtonStyle.Primary).setDisabled(totalTroops < 10),
-      new ButtonBuilder().setCustomId('idle_deploy_ancient_ruins').setLabel('Ekspedisi Reruntuhan Kuno').setEmoji('🏰').setStyle(ButtonStyle.Success).setDisabled(totalTroops < 30),
-      new ButtonBuilder().setCustomId('idle_deploy_dragon_nest').setLabel('Ekspedisi Sarang Naga').setEmoji('🐲').setStyle(ButtonStyle.Danger).setDisabled(totalTroops < 50)
+      new ButtonBuilder().setCustomId('town_idle_deploy_mist_valley').setLabel('Ekspedisi Lembah Kabut').setEmoji('🌫️').setStyle(ButtonStyle.Primary).setDisabled(totalTroops < 10),
+      new ButtonBuilder().setCustomId('town_idle_deploy_ancient_ruins').setLabel('Ekspedisi Reruntuhan Kuno').setEmoji('🏰').setStyle(ButtonStyle.Success).setDisabled(totalTroops < 30),
+      new ButtonBuilder().setCustomId('town_idle_deploy_dragon_nest').setLabel('Ekspedisi Sarang Naga').setEmoji('🐲').setStyle(ButtonStyle.Danger).setDisabled(totalTroops < 50)
     );
 
     const backRow = new ActionRowBuilder<ButtonBuilder>().addComponents(
@@ -104,7 +104,7 @@ export function renderIdleExpeditionMenu(player: PlayerInventory, userName: stri
       );
 
     const row = new ActionRowBuilder<ButtonBuilder>().addComponents(
-      new ButtonBuilder().setCustomId('idle_claim_rewards').setLabel('🎁 Klaim Hasil Buruan AFK').setStyle(ButtonStyle.Success),
+      new ButtonBuilder().setCustomId('town_idle_claim_rewards').setLabel('🎁 Klaim Hasil Buruan AFK').setStyle(ButtonStyle.Success),
       new ButtonBuilder().setCustomId('town_main').setLabel('Kembali').setEmoji(EMOJIS.btn_back || '🔙').setStyle(ButtonStyle.Secondary)
     );
 
@@ -115,8 +115,10 @@ export function renderIdleExpeditionMenu(player: PlayerInventory, userName: stri
 export function handleIdleExpeditionAction(db: MinigameDB, player: PlayerInventory, action: string, userName: string): any {
   if (!player.town) return 'Kota tidak ditemukan.';
 
-  if (action.startsWith('idle_deploy_')) {
-    const zoneId = action.replace('idle_deploy_', '');
+  const cleanAction = action.replace('town_', '');
+
+  if (cleanAction.startsWith('idle_deploy_')) {
+    const zoneId = cleanAction.replace('idle_deploy_', '');
     const zone = IDLE_ZONES.find(z => z.id === zoneId);
     if (!zone) return 'Zona tidak valid.';
 
@@ -151,7 +153,7 @@ export function handleIdleExpeditionAction(db: MinigameDB, player: PlayerInvento
     return renderIdleExpeditionMenu(player, userName);
   }
 
-  if (action === 'idle_claim_rewards') {
+  if (cleanAction === 'idle_claim_rewards') {
     if (!player.town.idleExpedition) {
       pushDashboardLog(player, `❌ Tidak ada hasil ekspedisi AFK untuk diklaim.`);
       return renderIdleExpeditionMenu(player, userName);
