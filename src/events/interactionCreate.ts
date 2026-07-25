@@ -222,10 +222,25 @@ const interactionCreateEvent: BotEvent = {
           saveMinigameDB(db);
         }
 
-        if (interaction.customId === 'town_deploy_dungeon' || interaction.customId === 'town_deploy_boss') {
+        if (interaction.customId === 'town_deploy_dungeon') {
+          await interaction.deferUpdate().catch(() => null);
+          const { renderIdleExpeditionMenu } = require('../utils/rpg/idle_expedition');
+          const resp = renderIdleExpeditionMenu(player, interaction.user.username);
+          await interaction.editReply(resp as any).catch(() => null);
+          return;
+        }
+
+        if (interaction.customId.startsWith('idle_')) {
+          await interaction.deferUpdate().catch(() => null);
+          const { handleIdleExpeditionAction } = require('../utils/rpg/idle_expedition');
+          const resp = handleIdleExpeditionAction(db, player, interaction.customId, interaction.user.username);
+          await interaction.editReply(resp as any).catch(() => null);
+          return;
+        }
+
+        if (interaction.customId === 'town_deploy_boss') {
           const { deployArmyModal } = require('../utils/rpg/deployments');
-          const targetType = interaction.customId.includes('dungeon') ? 'DUNGEON' : 'WORLD_BOSS';
-          await interaction.showModal(deployArmyModal(interaction.user.id, targetType)).catch(() => null);
+          await interaction.showModal(deployArmyModal(interaction.user.id, 'WORLD_BOSS')).catch(() => null);
           return;
         }
 

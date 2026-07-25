@@ -193,6 +193,7 @@ export interface PlayerInventory {
     marches?: ArmyMarch[];
     conqueredTiles?: { x: number, y: number, type: string }[];
     activeParty?: string[]; // Array of up to 3 general names
+    idleExpedition?: any;
     tier: number;           // 1=Village, 2=Town, 3=City, 4=Barony, 5=Duchy, 6=Kingdom
     landSlots: number;      // Total land owned (each = 4 build slots)
     buildings: {
